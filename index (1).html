@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Eng Shuayb: a monthly place to learn Electrical Engineering. Roadmap, demos and practical tips.">
+<meta name="theme-color" content="#07142a"><script>(function(){var n=navigator,c=n.connection||{};if((n.deviceMemory&&n.deviceMemory<=2)||(n.hardwareConcurrency&&n.hardwareConcurrency<=2)||c.saveData)document.documentElement.classList.add("lite")})()</script><script>try{var _t=localStorage.getItem("theme")||(matchMedia("(prefers-color-scheme:dark)").matches?"dark":"light");document.documentElement.setAttribute("data-theme",_t);var _m=document.querySelector("meta[name=theme-color]");if(_m)_m.content=_t==="dark"?"#07142a":"#ffffff"}catch(e){}</script>
+<meta property="og:type" content="website"><meta property="og:title" content="Eng Shuayb: Electrical Engineering">
+<meta property="og:description" content="A roadmap, demos and tips for learning Electrical Engineering, shared every month.">
+<meta property="og:image" content="https://engshuayb.github.io/og-image.jpg"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:image" content="https://engshuayb.github.io/og-image.jpg"><meta name="twitter:title" content="Eng Shuayb"><meta name="twitter:description" content="Electrical Engineering, shared every month.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Person","name":"Eng Shuayb","jobTitle":"Electrical engineering enthusiast","sameAs":["https://github.com/EngShuayb"]}</script>
+<link rel="canonical" href="https://engshuayb.github.io/"><meta name="author" content="Shuayb Abdirahman"><meta property="og:url" content="https://engshuayb.github.io/"><meta property="og:site_name" content="Eng Shuayb"><meta property="og:locale" content="en_US"><meta property="og:locale:alternate" content="so_SO"><meta property="og:image:width" content="1200"><meta property="og:image:height" content="630"><meta property="og:image:type" content="image/jpeg"><meta property="og:image:alt" content="Eng Shuayb: Electrical Engineering roadmap, demos and tips"><meta name="twitter:image:alt" content="Eng Shuayb: Electrical Engineering"><link rel="icon" href="favicon.svg" type="image/svg+xml"><link rel="icon" href="favicon.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:wght@800&display=swap" media="print" onload="this.media='all'"><noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Space+Grotesk:wght@500;700&family=JetBrains+Mono:wght@500&family=Playfair+Display:wght@800&display=swap"></noscript>
+<title>Eng Shuayb — Electrical Engineering</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);--bg:#07142a;--card:#0c1f3d;--tx:#e6f0ff;--mu:#9db4d6;--g:#38bdf8;--bd:#1d3a66}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#fff;--card:#f3f8f4;--tx:#10201a;--mu:#4d5f55;--g:#1d4ed8;--bd:#d3e3d8}}
+:root[data-theme="dark"]{--bg:#07142a;--card:#0c1f3d;--tx:#e6f0ff;--mu:#9db4d6;--g:#38bdf8;--bd:#1d3a66}
+:root[data-theme="light"]{--bg:#fff;--card:#f3f8f4;--tx:#10201a;--mu:#4d5f55;--g:#1d4ed8;--bd:#d3e3d8}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+a{color:var(--g)}
+nav{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--bd);display:flex;gap:16px;align-items:center;padding:12px 18px;overflow-x:auto;white-space:nowrap}
+nav b{color:var(--g);margin-right:auto}
+nav a{color:var(--mu);text-decoration:none;font-size:14px}
+nav button{background:none;border:1px solid var(--bd);color:var(--tx);border-radius:8px;padding:4px 9px;cursor:pointer}
+section{max-width:860px;margin:auto;padding:56px 20px}
+h2{font-size:28px;margin:0 0 20px}h2:after{content:"";display:block;width:48px;height:3px;background:var(--g);margin-top:8px;border-radius:2px}
+.hero{display:flex;gap:32px;align-items:center;flex-wrap:wrap;min-height:70vh}
+.av{width:170px;height:170px;border-radius:50%;border:3px solid var(--g);background:var(--card);display:grid;place-items:center;font-size:56px;font-weight:700;color:var(--g);flex:none;overflow:hidden}
+.av img{width:100%;height:100%;object-fit:cover}
+h1{font-size:clamp(30px,6vw,46px);line-height:1.15;margin:0 0 10px}
+.tag{color:var(--g);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+.btn{display:inline-block;padding:10px 20px;border-radius:10px;background:var(--g);color:#06140b;font-weight:600;text-decoration:none;margin:12px 10px 0 0}
+.btn.o{background:none;color:var(--g);border:1px solid var(--g)}
+.card{background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:14px}
+.tl{border-left:2px solid var(--g);margin-left:6px}
+.tl div{padding:0 0 22px 20px;position:relative}
+.tl div:before{content:"";position:absolute;left:-7px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--g)}
+.tl small{color:var(--g);font-weight:600}
+.mu{color:var(--mu)}
+details{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:14px 18px;margin-bottom:10px}
+summary{cursor:pointer;font-weight:600}
+.pill{display:inline-block;border:1px solid var(--bd);border-radius:99px;padding:3px 12px;margin:3px 4px 3px 0;font-size:13px;color:var(--mu)}
+footer{text-align:center;color:var(--mu);padding:30px 20px;border-top:1px solid var(--bd);font-size:14px}
+
+.stats{max-width:860px;margin:0 auto;padding:0 20px}
+.stats .grid{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.stats .card b{display:block;color:var(--g);font-size:13px;letter-spacing:.07em;text-transform:uppercase;margin-bottom:4px}
+.stats .card h3{margin:0 0 8px;font-size:18px}
+.stats .card p{margin:0;font-size:14px}
+.stats .card,.btn{transition:transform .25s,border-color .25s}
+.stats .card:hover{transform:translateY(-4px);border-color:var(--g)}
+.fl{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px}
+.fl button{background:none;border:1px solid var(--bd);color:var(--mu);border-radius:99px;padding:6px 14px;cursor:pointer;font:inherit;font-size:14px}
+.fl button.on{background:var(--g);color:#06140b;border-color:var(--g);font-weight:600}
+.js .rv{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.js .rv.in{opacity:1;transform:none}
+.js .hero .av,.js .hero>div:last-child{animation:up .9s ease both}
+.js .hero>div:last-child{animation-delay:.15s}
+@keyframes up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.js .rv,.js .hero .av,.js .hero>div:last-child{opacity:1;transform:none;transition:none;animation:none}}
+[hidden]{display:none!important}
+h3{margin:18px 0 10px;font-size:18px}
+.top{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));width:44px;height:44px;border-radius:50%;border:1px solid var(--g);background:var(--card);color:var(--g);font-size:20px;cursor:pointer;opacity:0;pointer-events:none;transform:translateY(10px);transition:.3s;z-index:6}
+.top.show{opacity:1;pointer-events:auto;transform:none}
+nav a.act{color:var(--g);font-weight:600}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+.pj{display:flex;flex-direction:column;gap:6px}
+.pj .st{font-size:12px;color:var(--g);font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+.pj h3{margin:0}
+details>summary{transition:color .2s}details:hover>summary{color:var(--g)}
+.share{margin-top:12px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;font-size:13px}
+.share a{border:1px solid var(--bd);border-radius:99px;padding:4px 12px;text-decoration:none}
+.share a:hover{border-color:var(--g)}
+.rt{color:var(--mu);font-weight:400;font-size:13px;margin-left:6px;white-space:nowrap}
+.pd{color:var(--mu);font-size:13px;margin:0 0 8px}
+
+.av{border-radius:18px;width:150px;height:190px;border-width:0;box-shadow:0 0 0 3px var(--g)}
+h1{letter-spacing:-.02em}
+h2{border-left:5px solid var(--g);padding-left:12px}h2:after{display:none}
+.btn{border-radius:8px}
+section{content-visibility:auto;contain-intrinsic-size:auto 600px}
+.hero{content-visibility:visible}
+nav{overflow-x:auto;scrollbar-width:none}nav::-webkit-scrollbar{display:none}
+nav button{flex:none;font-weight:600}
+.cvg{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px;margin:16px 0}
+.cvg .card b{display:block;margin-bottom:6px}
+@media(max-width:600px){section{padding:40px 16px}.hero{text-align:left}.av{width:120px;height:150px}}
+
+.rs{background:var(--card);border:1px solid var(--bd);border-radius:12px;padding:20px}
+.rs-top{display:flex;flex-wrap:wrap;gap:24px;align-items:center;padding-bottom:18px;border-bottom:1px solid var(--bd);margin-bottom:6px}
+.rs-big{display:flex;gap:14px;align-items:center}.rs-big b{font-size:20px}
+dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:14px}dt{color:var(--mu)}dd{margin:0;font-weight:600}
+.gr{display:inline-block;min-width:36px;text-align:center;padding:2px 10px;border-radius:6px;font-weight:700;font-size:14px;border:1px solid var(--g)}
+.gr.a{background:var(--g);color:#fff}.gr.am{color:var(--g)}.gr.b{color:var(--mu);border-color:var(--bd)}
+.gr.lg{font-size:30px;padding:8px 18px;border-radius:10px}
+.rs table{width:100%;border-collapse:collapse;font-size:15px}.rs caption{text-align:left;padding:10px 0 4px;font-size:13px}
+.rs th{text-align:left;font-size:13px;color:var(--mu);font-weight:600;border-bottom:1px solid var(--bd);padding:8px 4px}
+.rs td{padding:9px 4px;border-bottom:1px solid var(--bd)}.rs td:last-child,.rs th:last-child{text-align:right}
+.rs tbody tr:last-child td{border-bottom:0}
+@media(min-width:700px){.rs tbody{display:grid;grid-template-columns:1fr 1fr;column-gap:32px}.rs tbody tr{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--bd)}.rs tbody td{border:0}.rs thead{display:none}}
+
+/* ===== design overhaul ===== */
+#about>h2:before{content:"/01"}#journey>h2:before{content:"/02"}#results>h2:before{content:"/03"}#skills>h2:before{content:"/04"}#cv>h2:before{content:"/05"}#projects>h2:before{content:"/06"}#blog>h2:before{content:"/07"}#resources>h2:before{content:"/08"}#faq>h2:before{content:"/09"}#contact>h2:before{content:"/10"}
+:root{--g2:#22d3ee;--on:#04110a}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--g2:#0891b2;--on:#fff}}
+:root[data-theme="light"]{--g2:#0891b2;--on:#fff}:root[data-theme="dark"]{--g2:#22d3ee;--on:#04110a}
+body{counter-reset:s;-webkit-font-smoothing:antialiased}
+#bg{position:fixed;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.5}
+#sp{position:fixed;top:0;left:0;height:3px;width:100%;transform:scaleX(0);transform-origin:0 50%;background:linear-gradient(90deg,var(--g),var(--g2));z-index:9}
+nav{background:color-mix(in srgb,var(--bg) 70%,transparent);border-bottom-color:color-mix(in srgb,var(--g) 18%,var(--bd))}
+nav b{font:700 17px ui-monospace,SFMono-Regular,Menlo,monospace;background:linear-gradient(90deg,var(--g),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent}
+nav a{position:relative;transition:color .2s}nav a:hover{color:var(--tx)}
+nav a.act:after{content:"";position:absolute;left:0;right:0;bottom:-7px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--g),var(--g2))}
+.hero{position:relative;isolation:isolate;min-height:86vh}
+.hero:before{content:"";position:absolute;inset:-12% -25%;z-index:-1;background:radial-gradient(520px 360px at 22% 32%,color-mix(in srgb,var(--g) 26%,transparent),transparent 70%),radial-gradient(460px 320px at 85% 72%,color-mix(in srgb,var(--g2) 22%,transparent),transparent 70%);filter:blur(12px);animation:drift 14s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate3d(-2%,-1%,0) scale(1)}to{transform:translate3d(3%,2%,0) scale(1.08)}}
+h1{font-size:clamp(34px,7vw,58px);letter-spacing:-.03em;background:linear-gradient(100deg,var(--tx) 25%,var(--g) 55%,var(--g2) 80%,var(--tx));background-size:220% auto;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 7s linear infinite}
+@keyframes shine{to{background-position:220% center}}
+.tag{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.12em}.tag:after{content:"_";margin-left:2px;animation:blink 1s steps(2) infinite}
+@keyframes blink{50%{opacity:0}}
+.js .hero .av{animation:up .9s ease both,float 6s ease-in-out .9s infinite alternate;box-shadow:0 0 0 3px var(--g),0 0 0 9px color-mix(in srgb,var(--g) 18%,transparent),0 20px 50px color-mix(in srgb,var(--g) 35%,transparent)}
+@keyframes float{to{transform:translateY(-10px)}}
+.btn{background:linear-gradient(135deg,var(--g),var(--g2));color:var(--on);position:relative;overflow:hidden;box-shadow:0 8px 24px color-mix(in srgb,var(--g) 32%,transparent);transition:transform .25s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px color-mix(in srgb,var(--g) 45%,transparent)}
+.btn:after{content:"";position:absolute;top:0;bottom:0;width:40%;left:-60%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.45),transparent);transform:skewX(-20deg)}
+.btn:hover:after{left:130%;transition:left .7s}
+.btn.o{background:transparent;color:var(--g);border:1px solid var(--g);box-shadow:none}
+.btn.o:hover{background:color-mix(in srgb,var(--g) 12%,transparent)}
+.fl button.on{color:var(--on)}
+section:not(.hero)>h2{border:0;padding:0;font-size:clamp(26px,5vw,34px);letter-spacing:-.02em}
+section:not(.hero)>h2:before{display:block;font:600 12px ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.2em;color:var(--g);margin-bottom:6px}
+section:not(.hero)>h2:after{display:block;content:"";width:56px;height:3px;margin-top:10px;border-radius:3px;background:linear-gradient(90deg,var(--g),var(--g2))}
+.card,details,.rs{background:color-mix(in srgb,var(--card) 80%,transparent);transition:transform .3s,border-color .3s,box-shadow .3s}
+.card{position:relative;overflow:hidden}.card>*{position:relative}
+.card:before{content:"";position:absolute;inset:0;background:radial-gradient(280px circle at var(--mx,50%) var(--my,50%),color-mix(in srgb,var(--g) 20%,transparent),transparent 62%);opacity:0;transition:opacity .3s;pointer-events:none}
+.card:hover{transform:translateY(-4px);border-color:var(--g);box-shadow:0 14px 34px color-mix(in srgb,var(--g) 14%,transparent)}.card:hover:before{opacity:1}
+details[open]{border-color:color-mix(in srgb,var(--g) 55%,var(--bd))}
+.tl{border-left:2px solid transparent;border-image:linear-gradient(var(--g),var(--g2)) 1}
+.tl div:before{box-shadow:0 0 0 0 color-mix(in srgb,var(--g) 45%,transparent);animation:ping 2.6s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 9px transparent}to{box-shadow:0 0 0 0 transparent}}
+.tl small{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;letter-spacing:.04em}
+.pill{transition:border-color .2s,color .2s,transform .2s}.pill:hover{border-color:var(--g);color:var(--g);transform:translateY(-2px)}
+.js .rv.in :is(.grid,.tl,.cvg)>*,.js .rv.in .pill,.js .rv.in details{animation:up .7s ease both}
+.js .rv.in :is(.grid,.tl,.cvg)>:nth-child(2){animation-delay:.1s}.js .rv.in :is(.grid,.tl,.cvg)>:nth-child(3){animation-delay:.2s}
+.js .rv.in :is(.grid,.tl,.cvg)>:nth-child(4){animation-delay:.3s}.js .rv.in :is(.grid,.tl,.cvg)>:nth-child(5){animation-delay:.4s}.js .rv.in :is(.grid,.tl,.cvg)>:nth-child(6){animation-delay:.5s}
+.js .rv.in .rs tbody tr{animation:up .5s ease both;animation-delay:calc(var(--d,0)*.05s)}
+.js .rv.in .rs .gr.lg{animation:pop .9s cubic-bezier(.2,1.5,.4,1) both}
+@keyframes pop{from{transform:scale(.3) rotate(-12deg);opacity:0}to{transform:none;opacity:1}}
+footer{border-top:0;position:relative}footer:before{content:"";position:absolute;top:0;left:20%;right:20%;height:1px;background:linear-gradient(90deg,transparent,var(--g),var(--g2),transparent)}
+.top{box-shadow:0 8px 22px color-mix(in srgb,var(--g) 25%,transparent)}
+@media (min-width:640px){.hero>div:nth-child(2){flex:1 1 360px;min-width:0}.hero>.stats{flex:1 1 100%}h1{font-size:clamp(34px,5.2vw,52px)}}
+@media (max-width:600px){.hero{min-height:auto;padding-top:28px}.card,details,.rs,nav{}}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}#bg{display:none}h1{color:var(--tx);background:none}}
+
+/* ===== v3: smooth, richer animation ===== */
+:root{--ease:cubic-bezier(.2,.8,.2,1)}
+.hero:before{filter:none;will-change:transform}
+.hero{overflow:visible}
+.ckt{position:absolute;inset:0;width:100%;height:100%;z-index:-1;pointer-events:none;opacity:.6;-webkit-mask-image:radial-gradient(ellipse at 50% 45%,#000 25%,transparent 75%);mask-image:radial-gradient(ellipse at 50% 45%,#000 25%,transparent 75%)}
+.pl{stroke-width:2.5;stroke-linecap:round;stroke-dasharray:6 94;animation:flow 4.5s linear infinite}.p2{animation-duration:6s;animation-delay:-2s}.p3{animation-duration:5s;animation-delay:-1s}
+@keyframes flow{from{stroke-dashoffset:0}to{stroke-dashoffset:-100}}
+.nd{animation:node 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}.nd:nth-child(2n){animation-delay:-.8s}.nd:nth-child(3n){animation-delay:-1.5s}
+@keyframes node{50%{transform:scale(1.9);opacity:.35}}
+nav{animation:down .7s var(--ease) both}@keyframes down{from{transform:translateY(-100%)}}
+h1{font-size:clamp(40px,9vw,72px);line-height:1.05}
+.js .tx>*{animation:up .65s var(--ease) backwards}
+.tx>:nth-child(1){animation-delay:.05s}.tx>:nth-child(3){animation-delay:.3s}.tx>:nth-child(4){animation-delay:.4s}.tx>:nth-child(5){animation-delay:.5s}.tx>:nth-child(6){animation-delay:.58s}.tx>:nth-child(7){animation-delay:.66s}
+.js .tx>h1{animation:shine 7s linear infinite,wipe 1s var(--ease) .15s backwards}
+@keyframes wipe{from{clip-path:inset(0 100% 0 0);transform:translateX(-16px)}to{clip-path:inset(0);transform:none}}
+.role{font:600 clamp(16px,3.4vw,22px) ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--g2);min-height:1.7em;margin:0 0 10px}
+.role i{display:inline-block;width:2px;height:1.05em;background:var(--g2);margin-left:3px;vertical-align:-.15em;animation:blink 1s steps(2) infinite}
+.js .hero .av{animation:pop .9s cubic-bezier(.2,1.4,.4,1) both,float 6s ease-in-out .9s infinite alternate,glow 3.2s ease-in-out infinite}
+@keyframes glow{50%{box-shadow:0 0 0 3px var(--g),0 0 0 15px color-mix(in srgb,var(--g) 7%,transparent),0 24px 70px color-mix(in srgb,var(--g2) 50%,transparent)}}
+.js .rv{transition:opacity .55s var(--ease),transform .55s var(--ease)}
+.js .rv.in :is(.grid,.tl,.cvg)>*,.js .rv.in .pill,.js .rv.in details{animation:up .55s var(--ease) backwards}
+.js .rv.in .rs tbody tr{animation:up .45s var(--ease) backwards}
+.card{transform:translateY(var(--ty,0)) perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transition:transform .18s ease-out,border-color .3s,box-shadow .3s;will-change:transform}
+.card:hover{--ty:-4px;transform:translateY(var(--ty)) perspective(700px) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg))}
+.stats .card{box-shadow:inset 0 3px 0 var(--g)}
+section:not(.hero)>h2:after{transform:scaleX(0);transform-origin:0 50%;transition:transform .8s var(--ease) .15s}
+.rv.in>h2:after{transform:scaleX(1)}
+section:not(.hero)>h2:before{display:inline-block;transform:translateX(-12px);opacity:0;transition:.6s var(--ease)}
+.rv.in>h2:before{transform:none;opacity:1}
+nav a{padding:5px 11px;border-radius:99px}
+nav a.act{background:color-mix(in srgb,var(--g) 15%,transparent);color:var(--g)}nav a.act:after{display:none}
+
+.btn:active,.fl button:active{transform:scale(.96)}
+.rp{position:absolute;border-radius:50%;background:rgba(255,255,255,.55);transform:scale(0);animation:rip .6s ease-out forwards;pointer-events:none}
+@keyframes rip{to{transform:scale(1);opacity:0}}
+#cg{position:fixed;left:0;top:0;width:420px;height:420px;margin:-210px 0 0 -210px;border-radius:50%;background:radial-gradient(circle,color-mix(in srgb,var(--g) 14%,transparent),transparent 65%);pointer-events:none;z-index:-1;will-change:transform;opacity:0;transition:opacity .4s}
+.rs td:first-child{position:relative}
+.gb{position:absolute;left:0;bottom:-1px;height:2px;width:var(--w);background:linear-gradient(90deg,var(--g),var(--g2));transform:scaleX(0);transform-origin:0 50%;transition:transform .8s var(--ease) calc(var(--d,0)*.05s + .2s)}
+.rv.in .gb{transform:scaleX(1)}
+.tl{position:relative}.tl:after{content:"";position:absolute;left:-2px;top:0;width:2px;height:100%;background:var(--bg);transform-origin:0 100%;transition:transform 1.3s var(--ease)}
+.rv.in .tl:after{transform:scaleY(0)}
+@media (prefers-reduced-motion:reduce){.ckt,#cg{display:none}.gb{transform:none;transition:none}.tl:after{display:none}.card{transform:none}}
+
+/* ===== EE lab + AC wave ===== */
+#lab>h2:before{content:"/⚡"}
+.acw{position:absolute;left:0;right:0;bottom:0;height:70px;overflow:hidden;z-index:-1;opacity:.55;-webkit-mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent);mask-image:linear-gradient(90deg,transparent,#000 20%,#000 80%,transparent)}
+.acw svg{position:absolute;left:0;bottom:0;width:200%;height:70px;animation:acs 9s linear infinite}.acw svg+svg{animation-duration:15s;opacity:.6;bottom:6px}
+@keyframes acs{to{transform:translateX(-50%)}}
+.lab{grid-template-columns:repeat(auto-fit,minmax(290px,1fr))}
+.lab .card{--rx:0deg!important;--ry:0deg!important}
+.lab svg,.lab canvas{width:100%;height:auto;display:block}
+#cir path,#cir polyline{fill:none;stroke:var(--mu);stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+#cir .el{fill:var(--g2)}#cir text{fill:var(--mu);font:700 13px ui-monospace,monospace}
+#bg2{fill:#facc15;opacity:.2}#bl{fill:#facc15;stroke:var(--mu);stroke-width:2;fill-opacity:.2}
+.ro{display:grid;grid-template-columns:repeat(2,1fr);gap:6px 14px;margin:10px 0 2px;font-size:13px;color:var(--mu)}
+.ro b{display:block;font:700 19px ui-monospace,SFMono-Regular,Menlo,monospace;color:var(--g)}
+.lab label{display:flex;justify-content:space-between;font-size:13px;color:var(--mu);margin-top:8px}
+.lab input[type=range]{width:100%;accent-color:var(--g);height:28px}
+#sc{background:color-mix(in srgb,var(--bg) 78%,#000);border-radius:10px;border:1px solid var(--bd)}
+.lab button{margin-top:8px}
+@media (prefers-reduced-motion:reduce){.acw{display:none}}
+.note{border-left:3px solid var(--g2);padding:6px 14px;font-size:14px;color:var(--mu);margin:16px 0 0}.sj{display:flex;flex-wrap:wrap;gap:12px;margin-top:16px}.sj>span{display:flex;align-items:center;gap:12px;border:1px solid var(--bd);border-radius:10px;padding:8px 14px;font-weight:600}.js .rv.in .sj>span{animation:up .5s var(--ease) backwards}.js .rv.in .sj>span+span{animation-delay:.12s}.sb{display:flex;align-items:center;gap:14px;flex:1 1 240px;border:1px solid var(--bd);border-radius:14px;padding:12px 16px;background:linear-gradient(160deg,color-mix(in srgb,var(--card) 90%,var(--g)),var(--card));transition:border-color .3s,box-shadow .3s}
+.sb:hover{border-color:var(--g);box-shadow:0 12px 30px color-mix(in srgb,var(--g) 14%,transparent)}
+.sb svg{flex:none;width:100px;height:74px}.st2{display:flex;flex-direction:column;align-items:flex-start;gap:6px}.st2 .sn{font-weight:700}.st2 small{color:var(--mu);font-size:12px;line-height:1.35}
+.atom .orb{fill:none;stroke:var(--mu);stroke-width:.8;opacity:.55}.atom .el{fill:var(--g2)}.atom .nu{fill:var(--g);animation:nuc 1.8s ease-in-out infinite;transform-box:fill-box;transform-origin:center}
+@keyframes nuc{50%{transform:scale(1.3)}}
+#mg .cv{fill:none;stroke:var(--g);stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}#mg .ax{stroke:var(--bd);stroke-width:1;fill:none}#mg text{fill:var(--mu);font:600 9px ui-monospace,monospace}#md{fill:var(--g2)}
+.js .rv.in .sb{animation:up .5s var(--ease) backwards}.js .rv.in .sb+.sb{animation-delay:.12s}
+
+/* ===== FAQ upgrade ===== */
+#faq{position:relative}
+.qm{position:absolute;right:4px;top:-4px;width:64px;height:64px;perspective:420px}
+.qm:before{content:"";position:absolute;inset:-9px;border:2px dashed var(--g);border-radius:50%;opacity:.45;animation:qrot 14s linear infinite}
+.qm i{display:grid;place-items:center;width:100%;height:100%;border-radius:50%;background:linear-gradient(135deg,var(--g),var(--g2));color:#fff;font:800 36px/1 system-ui,sans-serif;font-style:normal;box-shadow:0 10px 28px color-mix(in srgb,var(--g) 35%,transparent);animation:qflip 4.5s ease-in-out infinite}
+@keyframes qflip{0%,35%{transform:rotateY(0)}75%,100%{transform:rotateY(360deg)}}
+@keyframes qrot{to{transform:rotate(360deg)}}
+#faq details>summary{list-style:none;display:flex;align-items:center;gap:12px}
+#faq details>summary::-webkit-details-marker{display:none}
+#faq details>summary:before{content:"?";flex:none;display:grid;place-items:center;width:28px;height:28px;border-radius:50%;background:color-mix(in srgb,var(--g) 18%,transparent);color:var(--g);font-weight:800;transition:transform .6s var(--ease),background .3s,color .3s}
+#faq details>summary:after{content:"+";margin-left:auto;font-size:22px;line-height:1;color:var(--g);transition:transform .35s var(--ease)}
+#faq details:hover>summary:before{transform:rotate(360deg)}
+#faq details[open]>summary:before{transform:rotate(360deg);background:var(--g);color:#fff}
+#faq details[open]>summary:after{transform:rotate(45deg)}
+#faq details>p{margin:12px 0 2px 40px;color:var(--mu)}
+#faq details[open]>p{animation:fa .45s var(--ease)}
+@keyframes fa{from{opacity:0;transform:translateY(-8px)}}
+.faqcta{margin-top:16px}.faqcta a{color:var(--g);font-weight:600}
+@media (max-width:520px){.qm{width:48px;height:48px}.qm i{font-size:28px}}
+@media (prefers-reduced-motion:reduce){.qm:before,.qm i{animation:none}}
+#faq details{box-sizing:border-box;will-change:height}
+#faq details>p{transition:opacity .3s}
+#faq details[open]>p{animation:fa .6s var(--ease) .06s backwards}
+/* ===== Theme switch: Day / Night scene ===== */
+nav #t{position:relative;flex:none;width:72px;height:34px;padding:0;border:0;border-radius:99px;overflow:hidden;cursor:pointer;background:linear-gradient(#4fb0f5,#9bd6ff);box-shadow:inset 0 2px 6px rgba(0,0,0,.25),0 0 0 1px var(--bd);transition:background .6s var(--ease),box-shadow .3s}
+html[data-theme=dark] nav #t{background:linear-gradient(#0b1430,#22346b)}
+nav #t:hover{box-shadow:inset 0 2px 6px rgba(0,0,0,.25),0 0 0 2px var(--g)}nav #t:focus-visible{outline:2px solid var(--g);outline-offset:3px}
+#t .sc{position:absolute;inset:0}
+#t .cl{position:absolute;background:#fff;border-radius:99px;transition:transform .6s var(--ease),opacity .5s}
+#t .c1{width:26px;height:10px;right:6px;bottom:5px}#t .c2{width:17px;height:8px;right:22px;bottom:11px;opacity:.85}
+html[data-theme=dark] #t .cl{transform:translateY(26px);opacity:0}
+#t .st{position:absolute;width:3px;height:3px;border-radius:50%;background:#fff;opacity:0;transform:translateY(-14px);transition:transform .6s var(--ease),opacity .5s}
+#t .s1{left:9px;top:8px}#t .s2{left:21px;top:21px;width:2px;height:2px}#t .s3{left:15px;top:14px;width:2px;height:2px}#t .s4{left:30px;top:9px}
+html[data-theme=dark] #t .st{opacity:1;transform:none;animation:tw 2.4s ease-in-out infinite}
+html[data-theme=dark] #t .s2{animation-delay:-.8s}html[data-theme=dark] #t .s3{animation-delay:-1.5s}html[data-theme=dark] #t .s4{animation-delay:-.4s}
+@keyframes tw{50%{opacity:.35}}
+#t .kn{position:absolute;top:3px;left:3px;width:28px;height:28px;border-radius:50%;background:#ffd34d;box-shadow:0 0 0 4px rgba(255,211,77,.28),0 0 0 8px rgba(255,211,77,.14),0 2px 8px rgba(0,0,0,.3);transition:transform .6s var(--ease),background .5s,box-shadow .5s}
+html[data-theme=dark] #t .kn{transform:translateX(38px);background:#e9edf5;box-shadow:0 0 0 4px rgba(233,237,245,.16),0 0 0 8px rgba(233,237,245,.08),0 2px 8px rgba(0,0,0,.4)}
+#t .cr{position:absolute;border-radius:50%;background:#c3c9d7;opacity:0;transition:opacity .5s}
+#t .cr.c1{width:8px;height:8px;left:15px;top:5px}#t .cr.c2{width:5px;height:5px;left:6px;top:15px}#t .cr.c3{width:4px;height:4px;left:16px;top:17px}
+html[data-theme=dark] #t .cr{opacity:1}
+html.tt *,html.tt *:before,html.tt *:after{transition:background-color .45s ease,color .45s ease,border-color .45s ease,fill .45s ease,stroke .45s ease!important}
+::view-transition-old(root),::view-transition-new(root){animation:none;mix-blend-mode:normal}
+::view-transition-old(root){z-index:1}::view-transition-new(root){z-index:2}
+@media (prefers-reduced-motion:reduce){#t .kn,#t .cl,#t .st{transition:none}html[data-theme=dark] #t .st{animation:none}}
+
+/* ===== v4: typography ===== */
+:root{--fb:'Inter',system-ui,-apple-system,'Segoe UI',Roboto,sans-serif;--fh:'Space Grotesk','Inter',system-ui,sans-serif;--fm:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,monospace;--fs:'Playfair Display',Georgia,'Times New Roman',serif}
+body{font-family:var(--fb);line-height:1.68;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;font-feature-settings:"cv11","ss01"}
+button,input,textarea,select{font-family:inherit}
+h1,h2,h3,nav b,.btn,.card>b,.rm .rc h3,.lead{font-family:var(--fh)}
+h1{font-weight:700;letter-spacing:-.04em;line-height:1.02}
+h2{font-size:clamp(28px,5.2vw,40px);font-weight:700;letter-spacing:-.03em;line-height:1.1}
+h3{font-weight:600;letter-spacing:-.015em}
+nav a{font-family:var(--fh);font-weight:500;font-size:14px;letter-spacing:.01em}
+.tag{font-family:var(--fm);font-size:12.5px;letter-spacing:.14em;text-transform:uppercase}
+.role,.ro b,.pd,.rt,.ik,.st2 small,#cir text,.mail{font-family:var(--fm)}
+p{letter-spacing:-.003em}.mu{font-weight:400}
+.btn{font-weight:600;letter-spacing:.005em}
+/* ===== avatar ===== */
+.av{width:168px;height:168px;border-radius:50%;padding:0;background:#0a1c33;border-width:0;box-shadow:0 0 0 3px var(--g),0 0 0 10px color-mix(in srgb,var(--g) 18%,transparent),0 20px 50px color-mix(in srgb,var(--g) 35%,transparent)}
+.av svg{display:block;width:100%;height:100%}
+.avp{stroke:#7dd3fc;stroke-width:3;stroke-dasharray:8 92;animation:flow 3.4s linear infinite}.avp.a2{animation-delay:-.9s}.avp.a3{animation-delay:-1.7s}.avp.a4{animation-delay:-2.4s}
+.av .eye{transform-box:fill-box;transform-origin:center;animation:eb 4.5s infinite}@keyframes eb{0%,92%,100%{transform:scaleY(1)}95%{transform:scaleY(.1)}}
+.av .bolt{animation:bz 3.2s infinite}@keyframes bz{0%,88%,100%{opacity:1}91%{opacity:.25}94%{opacity:1}97%{opacity:.4}}
+.av .avr{transform-origin:100px 100px;animation:qrot 22s linear infinite}
+/* ===== about ===== */
+#about .lead{font-size:clamp(20px,3.6vw,26px);font-weight:500;line-height:1.45;letter-spacing:-.015em;margin:14px 0 22px}
+#about .lead b{background:linear-gradient(100deg,var(--g),var(--g2));-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:700}
+.intro{border:1px solid var(--bd);border-radius:16px;padding:16px 18px;background:linear-gradient(160deg,color-mix(in srgb,var(--g) 8%,transparent),transparent 70%)}
+.intro .ik{display:block;font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--g);font-weight:700;margin-bottom:6px}.intro p{margin:0}
+.bnote{font-family:var(--fs);font-weight:800;font-size:clamp(17px,2.9vw,20px);line-height:1.5;letter-spacing:0;border-left:4px solid var(--g);padding:14px 18px;border-radius:0 14px 14px 0;background:color-mix(in srgb,var(--g) 9%,transparent);margin:20px 0 0;color:var(--tx)}
+/* ===== roadmap ===== */
+.rm{list-style:none;margin:26px 0 0;padding:0 0 0 56px;position:relative}
+.rm:before,.rm:after{content:"";position:absolute;left:19px;top:8px;bottom:8px;width:2px;border-radius:2px}
+.rm:before{background:var(--bd)}
+.rm:after{background:linear-gradient(180deg,transparent,var(--g),var(--g2),transparent);background-size:100% 30%;background-repeat:no-repeat;animation:rmf 3.4s linear infinite}
+@keyframes rmf{from{background-position:0 -60%}to{background-position:0 170%}}
+.rm li{position:relative;padding:0 0 20px}
+.rm .n{position:absolute;left:-56px;top:2px;width:40px;height:40px;border-radius:50%;display:grid;place-items:center;font:700 15px var(--fm);background:var(--card);border:2px solid var(--bd);color:var(--mu);transition:background .4s,border-color .4s,color .4s,box-shadow .4s}
+.rm li.on .n{background:var(--g);border-color:var(--g);color:#fff;box-shadow:0 0 0 7px color-mix(in srgb,var(--g) 18%,transparent)}
+.rm .rc{border:1px solid var(--bd);border-radius:14px;padding:14px 18px;background:linear-gradient(160deg,color-mix(in srgb,var(--card) 92%,var(--g)),var(--card));transition:transform .3s var(--ease),border-color .3s,box-shadow .3s}
+.rm .rc:hover{transform:translateX(5px);border-color:var(--g);box-shadow:0 12px 30px color-mix(in srgb,var(--g) 12%,transparent)}
+.rm .rc h3{margin:0 0 4px;font-size:19px}.rm .ic{margin-right:10px}.rm .rc p{margin:0}
+.js .rm li{opacity:0;transform:translateX(-16px);transition:opacity .55s var(--ease),transform .55s var(--ease)}.js .rm li.on{opacity:1;transform:none}
+/* ===== demos, projects, soon, misc ===== */
+.chip{font:700 11px var(--fm);text-transform:uppercase;letter-spacing:.08em;color:var(--g);border:1px solid color-mix(in srgb,var(--g) 45%,transparent);padding:3px 9px;border-radius:99px}
+.pj .go{display:inline-block;margin-top:10px;color:var(--g);font-weight:600;font-family:var(--fh)}
+.soon{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+.sc2{position:relative;border:1px dashed color-mix(in srgb,var(--g) 45%,var(--bd));border-radius:16px;padding:18px;overflow:hidden;transition:transform .3s var(--ease),border-color .3s}
+.sc2:hover{transform:translateY(-4px);border-color:var(--g)}
+.sc2 .si{font-size:26px;margin-bottom:6px}.sc2 h3{margin:0 0 4px;font-size:18px}.sc2 p{margin:0}
+.sc2 .tg{position:absolute;top:14px;right:14px;font:700 11px var(--fm);text-transform:uppercase;letter-spacing:.1em;color:var(--g);display:flex;align-items:center;gap:6px}
+.sc2 .tg:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--g);animation:node 1.6s ease-in-out infinite}
+.sc2 .bar{display:block;height:4px;border-radius:4px;background:var(--bd);margin-top:16px;overflow:hidden}
+.sc2 .bar i{display:block;height:100%;width:38%;border-radius:4px;background:linear-gradient(90deg,var(--g),var(--g2));animation:ld 2.4s ease-in-out infinite}
+@keyframes ld{from{transform:translateX(-100%)}to{transform:translateX(270%)}}
+.mail{margin-top:14px;font-size:14px}
+@media (prefers-reduced-motion:reduce){.avp,.av .eye,.av .bolt,.av .avr,.rm:after,.sc2 .bar i,.sc2 .tg:before{animation:none}.js .rm li{opacity:1;transform:none}}
+
+/* ===== profile: photo <-> avatar flip ===== */
+.av{position:relative;perspective:800px}
+.av .fp{position:absolute;inset:0;transform-style:preserve-3d;animation:flp 10s linear 1.6s infinite}
+.av .face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:50%;overflow:hidden}
+.av .f2{transform:rotateY(180deg)}.av .f2 img{width:100%;height:100%;object-fit:cover;display:block}
+@keyframes flp{0%,38%{transform:rotateY(0);animation-timing-function:cubic-bezier(.6,0,.2,1)}50%,88%{transform:rotateY(180deg);animation-timing-function:cubic-bezier(.6,0,.2,1)}100%{transform:rotateY(360deg)}}
+@media (hover:hover){.av:hover .fp{animation-play-state:paused}}
+@media (prefers-reduced-motion:reduce){.av .fp{animation:none}}
+
+/* ===== performance ===== */
+body{text-rendering:auto}
+.hero:before{animation:none}
+.js .tx>h1{animation:wipe 1s var(--ease) .15s backwards}
+.js .hero .av{animation:pop .9s cubic-bezier(.2,1.4,.4,1) both,float 6s ease-in-out .9s infinite alternate}
+.card{will-change:auto;transform:translateY(var(--ty,0))}.card:hover{--ty:-4px;transform:translateY(-4px)}
+.ckt,.acw{-webkit-mask-image:none;mask-image:none}
+.rm:after{animation:none;background:linear-gradient(180deg,var(--g),var(--g2));opacity:.5}
+#faq details{will-change:auto}
+section{contain-intrinsic-size:auto 560px}
+section:not(.vis) *,section:not(.vis) *:before,section:not(.vis) *:after{animation-play-state:paused!important}
+@media (max-width:700px){.acw{display:none}}
+html.lite *,html.lite *:before,html.lite *:after{animation:none!important}
+html.lite .ckt,html.lite .acw,html.lite #cg,html.lite #bg{display:none}
+
+/* ===== v5 ===== */
+.btn.sh:after{content:"→";display:inline-block;margin-left:8px;animation:nudge 1.8s ease-in-out infinite}@keyframes nudge{50%{transform:translateX(5px)}}
+.rmp{margin:18px 0 6px}.rbar{height:8px;border-radius:99px;background:var(--bd);overflow:hidden}
+.rbar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--g),var(--g2));transition:width 1.2s var(--ease)}
+.rmt{display:block;margin-top:8px;font:500 13px var(--fm);color:var(--mu)}.rmn{font-size:14px;margin:6px 0 0}
+.stt{display:inline-block;font:700 11px var(--fm);text-transform:uppercase;letter-spacing:.1em;padding:2px 9px;border-radius:99px;margin-bottom:8px;border:1px solid var(--bd);color:var(--mu)}
+.rm li[data-st=now] .stt{color:var(--g);border-color:var(--g);background:color-mix(in srgb,var(--g) 12%,transparent)}
+.rm li[data-st=done] .stt{background:var(--g);color:#fff;border-color:var(--g)}
+.js .rm li[data-st=next].on{opacity:.82}
+.rm li[data-st=next].on .n{background:var(--card);border-color:var(--bd);color:var(--mu);box-shadow:none}
+.rm li[data-st=now].on .n{animation:rmpu 2.2s ease-in-out infinite}@keyframes rmpu{50%{box-shadow:0 0 0 12px color-mix(in srgb,var(--g) 6%,transparent)}}
+.mo{border:1px solid var(--bd);border-radius:18px;padding:20px;background:linear-gradient(160deg,color-mix(in srgb,var(--g) 9%,transparent),transparent 70%);margin-top:18px}
+.mt{font:700 12px var(--fm);letter-spacing:.14em;text-transform:uppercase;color:var(--g)}
+.mo h3{margin:8px 0 6px;font-size:22px}.mo p{margin:0}
+.mf{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:14px}
+.fm{font:700 15px var(--fm);padding:7px 13px;border-radius:10px;border:1px solid color-mix(in srgb,var(--g) 40%,transparent);color:var(--g);background:color-mix(in srgb,var(--g) 8%,transparent)}
+.js .rv.in .fm{animation:up .5s var(--ease) backwards}.js .rv.in .fm:nth-child(2){animation-delay:.1s}.js .rv.in .fm:nth-child(3){animation-delay:.2s}
+.mo .go{margin-left:auto;color:var(--g);font:600 15px var(--fh)}
+@media (prefers-reduced-motion:reduce){.btn.sh:after,.rm li[data-st=now].on .n{animation:none}.rbar i{transition:none}}
+.ip{color:var(--g2)}.ip:before{content:"";display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--g);margin-right:6px;animation:node 1.6s ease-in-out infinite}@media (prefers-reduced-motion:reduce){.ip:before{animation:none}}</style><script>/* Google Analytics: ku beddel G-8CBRP2NH2F Measurement ID-gaaga */
+(function(){var GA_ID='G-8CBRP2NH2F';if(!/^G-[A-Z0-9]{6,}$/.test(GA_ID))return;var s=document.createElement('script');s.async=1;s.src='https://www.googletagmanager.com/gtag/js?id='+GA_ID;document.head.appendChild(s);window.dataLayer=window.dataLayer||[];window.gtag=function(){dataLayer.push(arguments)};gtag('js',new Date());gtag('config',GA_ID,{anonymize_ip:true})})();</script>
+<link rel="canonical" href="https://engshuayb.github.io/">
+<style>
+/* design pass: mobile, contrast, focus, speed */
+:focus-visible{outline:2px solid var(--g);outline-offset:3px;border-radius:6px}
+.btn{color:#06140b}
+:root[data-theme="light"] .btn:not(.o),:root[data-theme="light"] .gr.a{color:#fff}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .btn:not(.o),:root:not([data-theme="dark"]) .gr.a{color:#fff}}
+.gr.a{color:#06140b}
+:root[data-theme="light"] .gr.a{color:#fff}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .gr.a{color:#fff}}
+body{overflow-x:clip}img,svg,video{max-width:100%}
+section:not(.hero){content-visibility:auto;contain-intrinsic-size:auto 560px}
+html.pz *,html.pz *:before,html.pz *:after{animation-play-state:paused!important}
+@media(max-width:600px){
+.hero{padding-top:28px}.hero .tx{text-align:left}
+h1{font-size:clamp(34px,11vw,44px);line-height:1.08}
+.hero .btn{margin:10px 8px 0 0}.hero .btn.sh{display:block;width:100%;text-align:center;margin-right:0;padding:13px 20px}
+nav a{min-height:40px;display:inline-flex;align-items:center}
+.rs{overflow-x:auto}.rs th{font-size:14px}.rs td,.rs table,dl{font-size:15px}
+.card{padding:16px}.mu{font-size:15.5px}
+}
+</style>
+<script>document.addEventListener("visibilitychange",function(){document.documentElement.classList.toggle("pz",document.hidden)})</script>
+<style>
+/* ===== Blueprint redesign: navy paper, blue ink, drafting grid ===== */
+:root{--bg:#07142a;--card:#0c1f3d;--tx:#e6f0ff;--mu:#9db4d6;--g:#38bdf8;--g2:#60a5fa;--bd:#1d3a66;--gl:rgba(125,180,255,.07);--gm:rgba(125,180,255,.14);--gw:rgba(56,189,248,.16)}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]){--bg:#eef4ff;--card:#fff;--tx:#0b1f3f;--mu:#42597d;--g:#1d4ed8;--g2:#0284c7;--bd:#c3d5f2;--gl:rgba(29,78,216,.07);--gm:rgba(29,78,216,.14);--gw:rgba(29,78,216,.10)}}
+:root[data-theme="dark"]{--bg:#07142a;--card:#0c1f3d;--tx:#e6f0ff;--mu:#9db4d6;--g:#38bdf8;--g2:#60a5fa;--bd:#1d3a66;--gl:rgba(125,180,255,.07);--gm:rgba(125,180,255,.14);--gw:rgba(56,189,248,.16)}
+:root[data-theme="light"]{--bg:#eef4ff;--card:#fff;--tx:#0b1f3f;--mu:#42597d;--g:#1d4ed8;--g2:#0284c7;--bd:#c3d5f2;--gl:rgba(29,78,216,.07);--gm:rgba(29,78,216,.14);--gw:rgba(29,78,216,.10)}
+html{background:var(--bg)}body{background:transparent}
+body:before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;
+background:radial-gradient(900px 520px at 50% -8%,var(--gw),transparent 70%),
+linear-gradient(var(--gm) 1px,transparent 1px) 0 0/120px 120px,linear-gradient(90deg,var(--gm) 1px,transparent 1px) 0 0/120px 120px,
+linear-gradient(var(--gl) 1px,transparent 1px) 0 0/24px 24px,linear-gradient(90deg,var(--gl) 1px,transparent 1px) 0 0/24px 24px}
+#bg{display:none}
+.card,.rs,.mo,details{border-radius:6px}
+.card,.rs{border:1px solid var(--bd)}
+.btn{border-radius:6px;letter-spacing:.01em}
+.tag{font-family:var(--fm,ui-monospace,monospace);letter-spacing:.14em;text-transform:uppercase;font-size:12px}
+section>h2{position:relative;padding-bottom:12px}section>h2:after{content:"";position:absolute;left:0;bottom:0;width:72px;height:2px;background:var(--g);box-shadow:80px 0 0 -0px var(--bd),0 0 0 0 transparent}
+</style>
+<style>
+/* ===== portfolio polish ===== */
+.gl .card b{display:block;font:600 12px var(--fm,ui-monospace,monospace);letter-spacing:.14em;text-transform:uppercase;color:var(--g);margin-bottom:6px}
+.gl .card span{display:block;font-size:17px;line-height:1.4}
+#pg{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--g),var(--g2));z-index:99;pointer-events:none}
+footer{border-top:1px solid var(--bd);margin-top:40px;padding-top:22px}
+footer .fl{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin:10px 0}footer .fl a{color:var(--g)}
+</style>
+<style>.av .zap{transform-box:fill-box;transform-origin:center;animation:zp 2.4s ease-in-out infinite,bz 3.2s infinite}@keyframes zp{0%,100%{filter:drop-shadow(0 0 1.5px #fde047) drop-shadow(0 0 4px rgba(250,204,21,.4));transform:scale(1)}50%{filter:drop-shadow(0 0 4px #fde047) drop-shadow(0 0 10px rgba(250,204,21,.9));transform:scale(1.12)}}</style>
+<style>
+/* simple sun/moon toggle (replaces the heavy night/day scene) */
+nav #t{width:40px!important;height:40px!important;border:1px solid var(--bd)!important;border-radius:50%!important;background:color-mix(in srgb,var(--card) 70%,transparent)!important;box-shadow:none!important;color:var(--tx);display:inline-grid;place-items:center;transition:border-color .25s,box-shadow .25s,transform .2s!important}
+nav #t:hover{border-color:var(--g)!important;box-shadow:0 0 0 4px color-mix(in srgb,var(--g) 16%,transparent)!important}
+nav #t:active{transform:scale(.92)}
+#t .ic{position:absolute;width:20px;height:20px;transition:transform .5s cubic-bezier(.2,.8,.2,1),opacity .35s}
+#t .sun{color:#f59e0b}#t .moon{color:var(--g)}
+html:not([data-theme=dark]) #t .moon{opacity:0;transform:rotate(-80deg) scale(.4)}
+html[data-theme=dark] #t .sun{opacity:0;transform:rotate(80deg) scale(.4)}
+html[data-theme=dark] #t .moon{filter:drop-shadow(0 0 4px color-mix(in srgb,var(--g) 55%,transparent))}
+</style>
+</head><body>
+<nav><b>Eng Shuayb</b><a href="#about">About</a><a href="#roadmap" data-so="Jidka">Roadmap</a><a href="#lab" data-so="Shaybaar">Lab</a><a href="#projects">Projects</a><a href="#faq">FAQ</a><a href="#contact">Contact</a><button id="lg" aria-label="Language / Luqadda">SO</button><button id="t" type="button" role="switch" aria-checked="true" aria-label="Night / Day"><svg class="ic sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="ic moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></nav>
+
+<section class="hero" id="home">
+<div class="av" tabindex="0"><div class="fp"><div class="face f1"><svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Avatar of Eng Shuayb: engineer with a hard hat"><defs><linearGradient id="avb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2868ee"/><stop offset="1" stop-color="#1a4ad6"/></linearGradient><linearGradient id="avh" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fde68a"/><stop offset="1" stop-color="#f59e0b"/></linearGradient><filter id="avs"><feGaussianBlur stdDeviation="2.4"/></filter><clipPath id="avc"><circle cx="100" cy="100" r="100"/></clipPath><mask id="avm"><rect width="200" height="200" fill="#000"/><g fill="#fff"><path d="M30 200C30 158 66 142 100 142C134 142 170 158 170 200Z"/><rect x="90" y="122" width="20" height="26" rx="6"/><circle cx="100" cy="100" r="32"/></g><g fill="#000"><rect x="72" y="98" width="56" height="16" rx="8"/></g><path d="M84 146L100 166L116 146" fill="none" stroke="#000" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/><g fill="#fff"><circle class="eye" cx="88" cy="106" r="4.4"/><circle class="eye" cx="112" cy="106" r="4.4"/></g></mask></defs><circle cx="100" cy="100" r="100" fill="url(#avb)"/><g clip-path="url(#avc)"><g fill="none" stroke="#8fc0ff" stroke-opacity=".6" stroke-width="2.2" stroke-linejoin="round"><path d="M0 150H34V120H62"/><path d="M200 150H166V120H138"/><path d="M0 60H28V92H60"/><path d="M200 60H172V92H140"/><path d="M100 0V28"/></g><g fill="none" stroke-linecap="round" stroke-linejoin="round"><path class="avp" pathLength="100" d="M0 150H34V120H62"/><path class="avp a2" pathLength="100" d="M200 150H166V120H138"/><path class="avp a3" pathLength="100" d="M0 60H28V92H60"/><path class="avp a4" pathLength="100" d="M200 60H172V92H140"/><path class="avp" pathLength="100" d="M100 0V28"/></g><g fill="#bfe4ff"><circle class="nd" cx="62" cy="120" r="3.2"/><circle class="nd" cx="138" cy="120" r="3.2"/><circle class="nd" cx="60" cy="92" r="3.2"/><circle class="nd" cx="140" cy="92" r="3.2"/><circle class="nd" cx="100" cy="28" r="3.2"/></g><g transform="translate(-3 4)" opacity=".55" filter="url(#avs)"><rect width="200" height="200" fill="#08206e" mask="url(#avm)"/></g><rect width="200" height="200" fill="#f6f6f8" mask="url(#avm)"/></g><g><path d="M62 92C62 56 80 42 100 42C120 42 138 56 138 92Z" fill="url(#avh)"/><rect x="94" y="42" width="12" height="46" rx="3" fill="#f59e0b" opacity=".75"/><rect x="55" y="88" width="90" height="9" rx="4.5" fill="#f59e0b"/><polygon class="bolt" points="120,54 110,72 116,72 112,86 125,66 118,66" fill="#10201a"/></g><g class="avr"><circle cx="100" cy="100" r="93" fill="none" stroke="#cfe8ff" stroke-opacity=".75" stroke-width="2" stroke-dasharray="3 7" stroke-linecap="round"/><circle class="nd" cx="100" cy="7" r="3.2" fill="#7dd3fc"/><circle class="nd" cx="100" cy="193" r="3.2" fill="#7dd3fc"/><circle class="nd" cx="7" cy="100" r="3.2" fill="#7dd3fc"/><circle class="nd" cx="193" cy="100" r="3.2" fill="#7dd3fc"/></g></svg></div><div class="face f2"><img decoding="async" alt="Portrait of Eng Shuayb" src="data:image/jpeg;base64,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"></div></div></div>
+<div class="tx">
+<div class="tag" data-so="Koronto &amp; Elektaroonig">Electrical &amp; Electronics</div>
+<h1>Eng Shuayb</h1><div class="role"><span id="rt"></span><i></i></div>
+<p class="mu" data-so="Bil kasta waxaan la wadaagaa waxa aan ka barto Injineernimada Korontada: jidgooyo, demo-yo iyo talooyin la taaban karo.">Every month I share what I learn in Electrical Engineering: a roadmap, demos and practical tips.</p>
+<a class="btn sh" href="#roadmap" data-so="Halkan ka bilow">Start here</a><a class="btn o" href="#projects">Projects</a><a class="btn o" href="#contact">Contact</a>
+</div><div class="stats rv"><div class="grid">
+<div class="card"><b data-so="Jidka">Roadmap</b><h3 data-so="Baro EE tallaabo-tallaabo">Learn EE step by step</h3><p class="mu" data-so="Laga bilaabo xisaab iyo fisikis ilaa wareegyo, elektaroonig iyo awood: hal jid oo cad.">From maths and physics to circuits, electronics and power: one clear path.</p></div>
+<div class="card"><b data-so="Mashaariic">Projects</b><h3 data-so="Dhismooyin dhawaan">Builds coming soon</h3><p class="mu" data-so="Mashaariicdayda halkan ayaa lagu soo dhigi doonaa marka aan wax barto.">My own projects will be posted here as I learn.</p></div>
+<div class="card"><b data-so="Bille">Monthly</b><h3 data-so="Casharro cusub bil kasta">New lessons every month</h3><p class="mu" data-so="Hage iyo talooyin si fudud loo sharaxay.">Guides and tips explained simply.</p></div>
+</div></div>
+<svg class="ckt" viewBox="0 0 800 400" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><g fill="none" stroke-width="1.5"><path d="M0 80H180V160H320V60H520V140H800M0 320H140V260H360V340H560V240H800M240 0V60M640 400V300H800" stroke="var(--bd)"/><path class="pl" pathLength="100" d="M0 80H180V160H320V60H520V140H800" stroke="var(--g)"/><path class="pl p2" pathLength="100" d="M0 320H140V260H360V340H560V240H800" stroke="var(--g2)"/><path class="pl p3" pathLength="100" d="M240 0V60H320V160H180V80H0" stroke="var(--g)"/></g><g fill="var(--g)"><circle class="nd" cx="180" cy="80" r="4"/><circle class="nd" cx="320" cy="160" r="4"/><circle class="nd" cx="520" cy="60" r="4"/><circle class="nd" cx="140" cy="320" r="4"/><circle class="nd" cx="360" cy="260" r="4"/><circle class="nd" cx="560" cy="340" r="4"/></g></svg></section>
+
+<section id="about" class="rv"><h2>About</h2>
+<p class="lead" data-h data-so="Hi, waxaan ahay <b>Shuayb Abdirahman</b>. Waxaan rabaa inaan barto Injineernimada Korontada (EE), waxaanan la socdaa war-teknoolajiyadeed (Tech) sababtoo ah waxaan jeclahay inaan fahmo sida waxyaabuhu u shaqeeyaan.">Hi, I am <b>Shuayb Abdirahman</b>. I want to learn Electrical Engineering (EE), and I follow Tech news closely because I love understanding how things work.</p>
+<div class="intro"><span class="ik" data-so="Hordhac">Introduction</span><p data-so="Websaydkan waxaa loo sameeyay in lagula wadaago waxa aan bartay, bil kasta, Injineernimada Korontada. Tech waa hiwaayaddayda oo aan si dhow u la socdo, laakiin websaydkan wuxuu diiradda saarayaa Injineernimada Korontada. Bil kasta waxaad heli doontaa cashar cusub, cusboonaysiin jid ama mashruuc, si aan wada baranno.">This website exists to share what I learn, every month, in Electrical Engineering. Tech is my hobby and I follow it closely, but this website is focused on Electrical Engineering. Each month you will find a new lesson, a roadmap update or a project, so we can learn together.</p></div>
+<p class="bnote" data-so="Fiiro gaar ah: Mini Lab-ka iyo demo-yada Xisaabta &amp; Fisikiska ee bogga ku jira waa tusaalayaal (demos). Anigu ma aanan dhisin; waxay muujinayaan nooca Injineernimada Korontada ee aan baranayo. Mashaariicdayda marka aan dhiso halkan ayaan ku soo gelin doonaa.">Note: The Mini Lab and the Math &amp; Physics demos on this site are demos. I did not build them; they show the kind of Electrical Engineering I am learning. My own projects will be posted here as I build them.</p>
+</section>
+
+<section id="glance" class="rv"><h2 data-so="Dulmar">At a glance</h2><div class="grid gl">
+<div class="card"><b data-so="Diiradda">Focus</b><span data-so="Injineernimada Korontada">Electrical Engineering</span></div>
+<div class="card"><b data-so="Hadda waan baranayaa">Learning now</b><span data-so="Aasaaska Xisaabta &amp; Fisikiska (tallaabada 1)">Maths &amp; Physics foundations (Roadmap step 1)</span></div>
+<div class="card"><b data-so="Xiga">Next</b><span data-so="Wareegyada, elektaroonigga iyo awoodda">Circuits, electronics and power</span></div>
+<div class="card"><b data-so="Xiisaha">Interests</b><span data-so="War-teknoolajiyadeed iyo sida waxyaabuhu u shaqeeyaan">Tech news and how things work</span></div>
+<div class="card"><b data-so="Luqadaha">Languages</b><span data-so="Soomaali · Ingiriis">Somali · English</span></div>
+<div class="card"><b data-so="Hadafka">Goal</b><span data-so="Inaan jaamacad ku barto Injineernimada Korontada">To study Electrical Engineering at university</span></div>
+</div></section>
+<section id="roadmap" class="rv"><h2 data-so="Jidka Barashada">Roadmap</h2><p class="mu" data-so="Jid fudud oo lagu barto Injineernimada Korontada, laga bilaabo aasaaska ilaa takhasus.">A simple path to learn Electrical Engineering, from the basics to specialisation.</p><div class="rmp"><div class="rbar"><i id="rmf"></i></div><span class="rmt" id="rmt"></span></div><p class="mu rmn" data-so="Tallaabooyinkan waan cusboonaysiiyaa marka aan wax barto, sidaa darteed kani waa horumarkayga dhabta ah.">I update these steps as I learn, so this is my real progress.</p><ol class="rm"><li style="--i:0" data-st="now"><span class="n">1</span><div class="rc"><span class="stt"></span><h3><span class="ic">📐</span><span data-so="Aasaaska Xisaabta &amp; Fisikiska">Maths &amp; Physics foundations</span></h3><p class="mu" data-so="Aljebra, trigonometry iyo calculus aasaasi ah, iyo xoogag, tamar iyo mowjado.">Algebra, trigonometry and basic calculus, plus forces, energy and waves.</p></div></li><li style="--i:1" data-st="next"><span class="n">2</span><div class="rc"><span class="stt"></span><h3><span class="ic">⚡</span><span data-so="Koronto aasaasi ah">Basic electricity</span></h3><p class="mu" data-so="Voltage, current, resistance, Sharciga Ohm iyo awood.">Voltage, current, resistance, Ohm&#39;s Law and power.</p></div></li><li style="--i:2" data-st="next"><span class="n">3</span><div class="rc"><span class="stt"></span><h3><span class="ic">🔌</span><span data-so="Falanqaynta wareegyada">Circuit analysis</span></h3><p class="mu" data-so="Wareegyada series iyo parallel, sharciyada Kirchhoff iyo AC aasaasi ah.">Series and parallel circuits, Kirchhoff&#39;s laws and AC basics.</p></div></li><li style="--i:3" data-st="next"><span class="n">4</span><div class="rc"><span class="stt"></span><h3><span class="ic">🔬</span><span data-so="Elektaroonig analog ah">Analog electronics</span></h3><p class="mu" data-so="Diodes, transistors, op-amps iyo sensors, oo lagu tababaro breadboard.">Diodes, transistors, op-amps and sensors, practised on a breadboard.</p></div></li><li style="--i:4" data-st="next"><span class="n">5</span><div class="rc"><span class="stt"></span><h3><span class="ic">💻</span><span data-so="Dijitaal &amp; barnaamijin">Digital &amp; programming</span></h3><p class="mu" data-so="Albaabada macquulka (logic gates), microcontrollers (Arduino, ESP32), iyo C ama Python.">Logic gates, microcontrollers (Arduino, ESP32) and C or Python.</p></div></li><li style="--i:5" data-st="next"><span class="n">6</span><div class="rc"><span class="stt"></span><h3><span class="ic">🏭</span><span data-so="Awood &amp; makiinado">Power &amp; machines</span></h3><p class="mu" data-so="Transformers, matoorro, generators, nidaamyada awoodda iyo tamarta cusboonaysan.">Transformers, motors, generators, power systems and renewable energy.</p></div></li><li style="--i:6" data-st="next"><span class="n">7</span><div class="rc"><span class="stt"></span><h3><span class="ic">🚀</span><span data-so="Takhasus &amp; dhis">Specialise &amp; build</span></h3><p class="mu" data-so="Signals, control, embedded systems ama power electronics, iyo mashaariic dhab ah.">Signals, control, embedded systems or power electronics, with real projects.</p></div></li></ol></section>
+
+<section id="log" class="rv"><h2 data-so="Diiwaanka Barashada">Learning Log</h2>
+<div class="card lg"><p class="mu" id="lgi"></p><ol id="lgl"></ol></div><div class="card lg" id="adm" hidden></div></section>
+<style>.lg ol{list-style:none;margin:14px 0 0;padding:0}.lg li{display:flex;gap:12px;align-items:baseline;padding:10px 0;border-top:1px solid var(--bd)}.lg li:first-child{border-top:0}.lg .ck{color:var(--g);font-weight:700}.lg .dt{font-family:var(--fm,ui-monospace,monospace);font-size:13px;color:var(--mu);white-space:nowrap}.lg .nt{display:block;color:var(--mu);font-size:15px}#adm{margin-top:14px}#adm input,#adm textarea{width:100%;margin:6px 0;padding:10px;border:1px solid var(--bd);border-radius:6px;background:var(--bg);color:var(--tx);font:inherit;font-size:16px}#adm button,.lg .del{padding:9px 14px;border:1px solid var(--g);border-radius:6px;background:none;color:var(--g);font:inherit;cursor:pointer;margin:4px 6px 0 0}.lg .del{padding:2px 8px;margin:0 0 0 10px;border-color:#e5484d;color:#e5484d}#adm .ms{font-size:14px;color:var(--mu)}</style>
+<script>(function(){
+/* BACKEND (Supabase). Leave both empty to use the local LOG list below instead.
+   After setup, paste your Project URL and the public anon key here. */
+var SB_URL='https://wbfvsfvwuzynavfoidwn.supabase.co',SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndiZnZzZnZ3dXp5bmF2Zm9pZHduIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTE0MTYyNzgsImV4cCI6MjEwNjk5MjI3OH0.eegl0nTIX6KpAe79NC11f4vUU2PJG6DcLdK2-YixWSI';
+var LOG=[]; /* offline fallback: {m:"2026-10",en:"...",so:"...",ne:"...",ns:"..."} */
+var d=document,i=d.getElementById('lgi'),l=d.getElementById('lgl'),adm=d.getElementById('adm'),sb=null,user=null,rows=LOG,ok=false;
+var so=function(){return d.documentElement.lang==='so'};
+function esc(x){return String(x==null?'':x).replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]})}
+function r(){var S=so();
+i.textContent=rows.length?(S?'Mowduucyada aan dhab ahaan baray, mid mid ayaan ku darayaa.':'Topics I have actually learned, added one by one.'):(S?'Weli waa madhan yahay. Mowduuc kasta oo aan dhammeeyo halkan ayuu ku soo muuqan doonaa.':'Nothing here yet. Each topic I finish will appear here.');
+l.innerHTML=rows.slice().reverse().map(function(e){var t=(S&&e.so)||e.en,n=(S&&e.ns)||e.ne;return'<li><span class="ck" aria-hidden="true">✔</span><span><b>'+esc(t)+'</b>'+(n?'<span class="nt">'+esc(n)+'</span>':'')+'</span><span class="dt" style="margin-left:auto">'+esc(e.m)+(user&&e.id?'<button class="del" data-id="'+e.id+'" aria-label="Delete">✕</button>':'')+'</span></li>'}).join('')}
+async function load(){if(!sb)return;var q=await sb.from('learning_log').select('*').order('m',{ascending:true}).order('id',{ascending:true});
+ if(!q.error&&q.data){rows=q.data.map(function(e){return{id:e.id,m:e.m,en:e.title_en,so:e.title_so,ne:e.note_en,ns:e.note_so}});ok=true}r()}
+function panel(){if(location.hash!=='#admin'){adm.hidden=true;return}adm.hidden=false;
+ if(!sb){adm.innerHTML='<p class="mu">Backend is not connected yet. Fill SB_URL and SB_KEY in index.html (see setup steps).</p>';return}
+ if(!user){adm.innerHTML='<b>Admin login</b><input id="ae" type="email" placeholder="Email" autocomplete="username"><input id="ap" type="password" placeholder="Password" autocomplete="current-password"><button id="al">Login</button><p class="ms" id="am"></p>';
+  d.getElementById('al').onclick=async function(){var x=await sb.auth.signInWithPassword({email:d.getElementById('ae').value.trim(),password:d.getElementById('ap').value});d.getElementById('am').textContent=x.error?'Login failed.':''};return}
+ adm.innerHTML='<b>Add a topic</b><input id="fm" type="month"><input id="ft" maxlength="120" placeholder="Title (English)"><input id="fs" maxlength="120" placeholder="Cinwaan (Soomaali), optional"><textarea id="fn" maxlength="300" rows="2" placeholder="Short note (English), optional"></textarea><textarea id="fq" maxlength="300" rows="2" placeholder="Qoraal gaaban (Soomaali), optional"></textarea><button id="fa">Add</button><button id="fo">Logout</button><p class="ms" id="am"></p>';
+ d.getElementById('fo').onclick=function(){sb.auth.signOut()};
+ d.getElementById('fa').onclick=async function(){var g=function(k){return d.getElementById(k).value.trim()},m=g('fm'),t=g('ft');if(!m||!t){d.getElementById('am').textContent='Month and title are required.';return}
+  var x=await sb.from('learning_log').insert({m:m,title_en:t,title_so:g('fs')||null,note_en:g('fn')||null,note_so:g('fq')||null});
+  if(x.error){d.getElementById('am').textContent='Could not save.';return}panel();load()}}
+l.addEventListener('click',async function(e){var b=e.target.closest&&e.target.closest('.del');if(!b||!user)return;if(!confirm('Delete this topic?'))return;await sb.from('learning_log').delete().eq('id',b.dataset.id);load()});
+function start(){sb=window.supabase.createClient(SB_URL,SB_KEY);
+ sb.auth.getSession().then(function(x){user=x.data&&x.data.session?x.data.session.user:null;panel();load()});
+ sb.auth.onAuthStateChange(function(_e,ses){user=ses?ses.user:null;panel();r()})}
+r();panel();addEventListener('hashchange',panel);
+new MutationObserver(r).observe(d.documentElement,{attributes:true,attributeFilter:['lang']});
+if(SB_URL&&SB_KEY){var sc=d.createElement('script');sc.src='https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.min.js';sc.onload=start;d.head.appendChild(sc)}
+})();</script>
+<section id="lab" class="rv"><h2 data-so="Shaybaarka Yar (tusaale)">Mini Lab (demo)</h2>
+<p class="mu" data-so="Dhaqaaji sliders-ka oo arag Sharciga Ohm (V = I × R) oo nool: socodka, awoodda iyo laydhka ayaa isbeddelaya.">Drag the sliders and watch Ohm's Law (V = I × R) come alive: current, power and the bulb all react.</p>
+<div class="grid lab">
+<div class="card"><svg id="cir" viewBox="0 0 320 190" role="img" aria-label="Circuit with battery, resistor and bulb"><path d="M40 88V40H110M190 40H280V77M280 113V150H40V100"/><path d="M26 88H54M33 100H47" style="stroke-width:3.5"/><text x="58" y="86">+</text><polyline id="rz" points="110,40 120,28 132,52 144,28 156,52 168,28 180,52 190,40" style="stroke-width:3.5"/><circle id="bg2" cx="280" cy="95" r="20"/><circle id="bl" cx="280" cy="95" r="17"/><path d="M272 102l4-8 4 8 4-8" style="stroke:#facc15"/><g id="el"></g></svg>
+<div class="ro"><span data-so="Voltage (V)">Voltage (V)<b id="vo"></b></span><span data-so="Iska-caabbin (R)">Resistance (R)<b id="ro"></b></span><span data-so="Socod (I)">Current (I)<b id="io"></b></span><span data-so="Awood (P)">Power (P)<b id="po"></b></span></div>
+<label><span data-so="Voltage">Voltage</span><span id="lvv"></span></label><input id="lv" type="range" min="1" max="24" value="12" aria-label="Voltage">
+<label><span data-so="Iska-caabbin">Resistance</span><span id="lrv"></span></label><input id="lr" type="range" min="1" max="100" value="10" aria-label="Resistance"></div>
+<div class="card"><h3 style="margin-top:0" data-so="Oscilloscope">Oscilloscope</h3><canvas id="sc" width="320" height="170" aria-label="Oscilloscope waveform"></canvas>
+<label><span data-so="Frequency">Frequency</span><span id="lfv"></span></label><input id="lf" type="range" min="1" max="8" value="3" aria-label="Frequency">
+<button class="btn o" id="md" type="button">AC</button><p class="mu" style="font-size:13px;margin:8px 0 0" data-so="AC waa mowjad is-beddelaysa (sida korontada guriga); DC waa xariiq toosan (sida baytari). Height-ku wuxuu raacaa voltage-ka.">AC is a wave that swings up and down (like mains power); DC is a flat line (like a battery). Height follows the voltage.</p></div>
+</div></section>
+
+<section id="demos" class="rv"><h2 data-so="Demo-yada Xisaabta &amp; Fisikiska">Math &amp; Physics Demos</h2><p class="mu" data-so="Laba demo oo yaryar oo nool: elektaroonno ku wareegaya nucleus, iyo graph is-beddelaya marka aad eegayso.">Two small live demos: electrons orbiting a nucleus, and a graph that changes as you watch.</p><div class="sj"><div class="sb"><svg class="atom" viewBox="0 0 96 72" role="img" aria-label="Atom with electrons orbiting a nucleus"><g transform="translate(48 36)"><g transform="rotate(0)"><ellipse class="orb" rx="30" ry="12.6"/><circle class="el" r="3.6"><animateMotion dur="3s" begin="0s" repeatCount="indefinite" path="M30 0A30 12.6 0 1 1 -30 0A30 12.6 0 1 1 30 0"/></circle></g><g transform="rotate(60)"><ellipse class="orb" rx="30" ry="12.6"/><circle class="el" r="3.6"><animateMotion dur="4.2s" begin="-1s" repeatCount="indefinite" path="M30 0A30 12.6 0 1 1 -30 0A30 12.6 0 1 1 30 0"/></circle></g><g transform="rotate(120)"><ellipse class="orb" rx="30" ry="12.6"/><circle class="el" r="3.6"><animateMotion dur="5.4s" begin="-2s" repeatCount="indefinite" path="M30 0A30 12.6 0 1 1 -30 0A30 12.6 0 1 1 30 0"/></circle></g><circle class="nu" r="5.5"/></g></svg><div class="st2"><span class="sn" data-so="Fisikis">Physics</span><span class="chip" data-so="Tusaale">Demo</span><small data-so="Elektaroonno ku wareegaya nucleus">Electrons orbiting a nucleus</small></div></div><div class="sb"><svg id="mg" viewBox="0 0 88 64" role="img" aria-label="Graph of y equals a times x squared, changing live"><path class="ax" d="M4 52H84M44 4V60"/><path id="mp" class="cv" d="M4.4 16.4L7.0 21.0L9.7 25.2L12.3 29.2L15.0 32.8L17.6 36.2L20.2 39.2L22.9 41.9L25.5 44.2L28.2 46.3L30.8 48.0L33.4 49.5L36.1 50.6L38.7 51.4L41.4 51.8L44.0 52.0L46.6 51.8L49.3 51.4L51.9 50.6L54.6 49.5L57.2 48.0L59.8 46.3L62.5 44.2L65.1 41.9L67.8 39.2L70.4 36.2L73.0 32.8L75.7 29.2L78.3 25.2L81.0 21.0L83.6 16.4"/><circle id="md" r="3.4" cx="44" cy="52"/><text id="ml" x="4" y="11">y = 1.0x²</text></svg><div class="st2"><span class="sn" data-so="Xisaab">Mathematics</span><span class="chip" data-so="Tusaale">Demo</span><small data-so="Graph nool: y = a·x²">Live graph: y = a·x²</small></div></div></div>
+</section>
+
+<section id="projects" class="rv"><h2>Projects</h2><p class="mu" data-so="Wax kasta oo aan dhiso halkan ayaa lagu soo dhigi doonaa.">Everything I build will be posted here.</p><div class="grid">
+<div class="card pj"><span class="st">Coming soon</span><h3 data-so="Mashaariicda dhawaan">Projects are coming soon</h3><p class="mu" data-so="Mashaariicda aan dhiso halkan ayaa lagu soo dhigi doonaa.">The projects I build will be posted here.</p></div>
+</div></section>
+
+<section id="blog" class="rv"><h2>Blog</h2>
+<p class="mu">Filter by topic:</p>
+<div class="fl" id="fl"><button class="on" data-c="all">All</button><button data-c="engineering">Engineering</button><button data-c="science">Science</button><button data-c="learning">Learning</button></div>
+<div id="posts">
+
+<details data-c="learning"><summary>Why I start with maths and physics</summary><p class="pd">Published: 5 October 2026</p>
+<p>My roadmap starts with maths and physics, not circuits. Electrical engineering uses both all the time: algebra to solve equations like V = I × R, and physics to understand energy, forces and waves.</p>
+<p>I would rather build a strong base first than jump ahead and get lost later. When I finish a step, I will mark it on the roadmap.</p></details>
+
+<details data-c="engineering learning"><summary>Why this page has a Mini Lab, and who made it</summary><p class="pd">Published: 4 October 2026</p>
+<p>The Mini Lab and the oscilloscope on this page are demos. I did not build them myself. They are examples of the projects I want to learn to make in Electrical Engineering, so you can see the ideas I will study at university.</p>
+<p>In the Mini Lab, voltage, resistance, current and power are linked by Ohm's Law (V = I × R) and P = V × I. The oscilloscope shows the difference between AC, which swings up and down like mains power, and DC, which stays flat like a battery. Once I learn these properly, I plan to build my own circuits and share them here.</p></details>
+
+<details data-c="engineering science"><summary>What is electricity? Voltage, current and resistance simply explained</summary><p class="pd">Published: 3 October 2026</p>
+<p>Electricity is the flow of electric charge, usually electrons moving through a conductor. Three ideas explain most circuits.</p>
+<p><b>Voltage (V)</b> is the push that moves charge, like water pressure in a pipe. <b>Current (I)</b>, measured in amperes, is how much charge flows each second, like the amount of water passing. <b>Resistance (R)</b>, measured in ohms, is how much the material resists the flow, like a narrow pipe.</p>
+<p>They connect through Ohm's Law: <b>V = I × R</b>. If a 12 V battery drives a 4 Ω resistor, the current is 12 ÷ 4 = 3 A. Master this one equation and you can already analyse simple circuits.</p></details>
+
+<details data-c="engineering"><summary>Why Somalia needs more electrical engineers</summary><p class="pd">Published: 3 October 2026</p>
+<p>Reliable electricity powers hospitals, schools, businesses and communication. Every one of them needs people who can design, install and maintain electrical systems.</p>
+<p>Skilled engineers can help build affordable, safe and reliable power for our communities, which is why I want to study it and share what I learn along the way.</p></details>
+
+<details data-c="engineering science"><summary>Series vs parallel circuits: what is the difference?</summary><p class="pd">Published: 3 October 2026</p>
+<p>In a <b>series</b> circuit, components are connected in one line. The same current flows through all of them, the voltages add up, and if one component breaks, everything stops.</p>
+<p>In a <b>parallel</b> circuit, each component has its own branch. Every branch gets the same voltage, the currents add up, and if one branch fails the others keep working. This is why the lights and sockets in a house are wired in parallel.</p></details>
+
+<details data-c="engineering"><summary>Why I want to become an electrical engineer</summary><p class="pd">Published: 3 October 2026</p>
+<p>It started when I realised electrical engineering is a very useful profession. I became curious and researched the field.</p>
+<p>My research showed it is a good field with a good future and that our country needs it. My goal is to benefit myself, my people and my country, and this field lets me do that.</p></details>
+
+<details data-c="science learning"><summary>How to solve physics problems step by step</summary><p class="pd">Published: 3 October 2026</p>
+<p>1. Write down what is given and what you must find. 2. Draw a quick sketch. 3. Choose the formula that connects them. 4. Check that all units match, for example metres and seconds. 5. Substitute the numbers and calculate. 6. Ask whether the answer makes sense.</p>
+<p>Following the same steps every time makes hard problems feel manageable, and it also helps you find where you made a mistake.</p></details>
+</div>
+<p id="none" class="mu" hidden>No posts in this topic yet. More coming soon.</p>
+<p class="mu">More posts coming soon.</p>
+</section>
+
+<section id="resources" class="rv"><h2>Resources for Students</h2>
+<p class="mu">Study tips and quick notes I use myself. Free to use and share.</p>
+<h3 data-so="Talooyin barasho oo ku saabsan injineernimada korontada">Learning tips for electrical engineering</h3>
+<div class="grid">
+<div class="card"><b data-so="1. Barasho maalinle ah">1. Practise a little every day</b><p class="mu" data-so="Soddon daqiiqo oo diiradda lagu saaray maalin kasta way ka fiican tahay hal fadhi dheer oo dhammaadka toddobaadka ah.">Thirty focused minutes daily beats one long weekend session.</p></div>
+<div class="card"><b data-so="2. Dhis wareegyo yaryar">2. Build small circuits</b><p class="mu" data-so="Baytari, LED iyo resistor waxay ku bartaan wax ka badan bog aragti ah.">A battery, an LED and a resistor teach more than a page of theory.</p></div>
+<div class="card"><b data-so="3. Marka hore simulate">3. Simulate first</b><p class="mu" data-so="Fikradaha ku tijaabi simulator bilaash ah sida Tinkercad, Falstad ama LTspice ka hor inta aanad taaban qalab.">Try ideas in a free simulator such as Tinkercad, Falstad or LTspice before touching hardware.</p></div>
+<div class="card"><b data-so="4. Baro cutubyada">4. Learn the units</b><p class="mu" data-so="Volts, amps, ohms, watts iyo farads: ogow waxa mid kastaa cabbiro iyo sida ay isu xiran yihiin.">Volts, amps, ohms, watts and farads: know what each one measures and how they connect.</p></div>
+<div class="card"><b data-so="5. Akhri datasheets">5. Read datasheets</b><p class="mu" data-so="Qayb kastaa wuxuu leeyahay datasheet. Baro sida loo helo voltage-ka, current-ka iyo pin-yada.">Every component has a datasheet. Learn to find the voltage, current and pin layout.</p></div>
+<div class="card"><b data-so="6. Qor shaqadaada">6. Document your work</b><p class="mu" data-so="Sawir wareegga oo qor waxa aad beddeshay iyo waxa dhacay. Qoraalladaadu waxay noqdaan portfolio-gaaga.">Draw the circuit and note what you changed and what happened. Your notes become your portfolio.</p></div>
+</div>
+<h3 style="margin-top:28px">Quick notes</h3>
+<details><summary>Electricity</summary>
+<p><b>Ohm's Law:</b> V = I × R<br><b>Power:</b> P = V × I (also P = I²R and P = V²/R)<br><b>Energy:</b> E = P × t<br><b>Resistors in series:</b> R = R₁ + R₂ + …<br><b>Resistors in parallel:</b> 1/R = 1/R₁ + 1/R₂ + …</p></details>
+<details><summary>Physics</summary>
+<p><b>Speed:</b> v = d / t<br><b>Acceleration:</b> a = (v − u) / t<br><b>Force:</b> F = m × a<br><b>Weight:</b> W = m × g (g ≈ 9.8 m/s²)<br><b>Work:</b> W = F × d</p></details>
+<details><summary>Maths</summary>
+<p><b>Pythagoras:</b> a² + b² = c²<br><b>Quadratic formula:</b> x = (−b ± √(b² − 4ac)) / 2a<br><b>Area of a circle:</b> A = πr²<br><b>Circumference:</b> C = 2πr</p></details>
+<details><summary data-so="Badbaadada aasaasiga ah">Safety basics</summary><p data-so="Ka bilow baytariyo danab hoose (ilaa 12 V) · Ha furin ha ka shaqayn qalab korontada guriga ku shaqeeya · Biyaha ka fogee wareegyada · Goo awoodda ka hor intaadan wareegga beddelin · Weydii qof khibrad leh marka aadan hubin.">Start with low-voltage batteries (up to 12 V) · Never open or work on mains-powered devices · Keep water away from circuits · Disconnect power before changing a circuit · Ask an experienced person when unsure.</p></details>
+</section>
+
+<section id="soon" class="rv"><h2 data-so="Dhawaan">Coming Soon</h2><p class="mu" data-so="Waxa aan u diyaarinayo websaydkan xiga.">What I am preparing next for this website.</p><div class="soon"><div class="sc2"><span class="tg" data-so="Dhawaan">Soon</span><div class="si">📚</div><h3 data-so="Maktabadda sawirrada wareegyada">Circuit diagram library</h3><p class="mu" data-so="Sawirro wareeg oo nadiif ah oo lagu calaamadeeyay wareegyada bilowga ugu badan.">Clean, labelled diagrams for the most common beginner circuits.</p><span class="bar"><i style="animation-delay:0.0s"></i></span></div><div class="sc2"><span class="tg" data-so="Dhawaan">Soon</span><div class="si">🎬</div><h3 data-so="Casharrada fiidiyoowga">Video tutorials</h3><p class="mu" data-so="Fiidiyoowyo gaagaaban oo fudud oo sharraxaya hal fikrad mar kasta.">Short, simple videos that explain one idea at a time.</p><span class="bar"><i style="animation-delay:0.3s"></i></span></div><div class="sc2"><span class="tg" data-so="Dhawaan">Soon</span><div class="si">🔤</div><h3 data-so="Qaamuus Soomaali–Ingiriis EE">Somali–English EE glossary</h3><p class="mu" data-so="Ereyada muhiimka ah ee injineernimada korontada oo lagu sharaxay labada luqadood.">Key electrical engineering terms explained in both languages.</p><span class="bar"><i style="animation-delay:1.0s"></i></span></div></div></section>
+
+<section id="faq" class="rv"><span class="qm" aria-hidden="true"><i>?</i></span><h2>FAQ</h2>
+<details><summary data-so="Maxaan ka heli doonaa websaydkan?">What will I find on this website?</summary><p data-so="Bil kasta: cusboonaysiin jidka, cashar ama hage, iyo mashaariicdayda marka aan dhiso.">Every month: a roadmap update, a lesson or guide, and my own projects as I build them.</p></details>
+<details><summary data-so="Sideen u bilaabaa barashada injineernimada korontada?">How do I start learning electrical engineering?</summary><p data-so="Ka bilow Sharciga Ohm (V = I × R), kadibna wareegyada series iyo parallel, iyo fisikis iyo xisaab aasaasi ah. Maalin kasta wax yar ku celceli, oo dhis wareegyo yaryar marka aad awooddo. Mini Lab-ka bogga ku jira wuxuu muujiyaa sida voltage, resistance iyo current isugu xiran yihiin.">Start with Ohm&#39;s Law (V = I × R), then series and parallel circuits, and basic physics and maths. Practise a little every day and build small circuits when you can. The Mini Lab on this page shows how voltage, resistance and current connect.</p></details>
+<details><summary data-so="Sideen u isticmaalaa Mini Lab-ka?">How do I use the Mini Lab?</summary><p data-so="Dhaqaaji sliders-ka voltage iyo resistance. Current waa V ÷ R, power-kuna waa V × I. Elektaroonnadu way dhakhsaan marka current kordho, laydhku wuu iftiimaa, resistor-kuna wuu kululaadaa marka power kordho. Oscilloscope-ka, u beddel AC iyo DC oo bedel frequency-ga si aad u aragto mowjadda oo isbeddelaysa.">Drag the voltage and resistance sliders. Current is V ÷ R and power is V × I. The electrons move faster as current rises, the bulb gets brighter and the resistor warms up as power rises. On the oscilloscope, switch between AC and DC and change the frequency to see the wave change.</p></details>
+<details><summary data-so="Ma adigaa dhisay Mini Lab-ka iyo demo-yada?">Did you build the Mini Lab and the demos?</summary><p data-so="Maya. Waa tusaalayaal (demos) muujinaya nooca injineernimada korontada ee aan baranayo. Marka aan wax barto, kuwayga ayaan dhisi oo soo gelin doonaa.">No. They are demos that show the kind of electrical engineering I am learning. As I learn, I will build and post my own.</p></details>
+<p class="mu faqcta"><span data-so="Ma helin jawaabtaada?">Did not find your answer?</span> <a href="#contact" data-so="Iila xiriir">Contact me</a></p>
+</section>
+
+<section id="contact" class="rv"><h2>Contact</h2>
+<p>Questions, ideas or collaboration? Reach out:</p>
+<a class="btn" id="em" href="#contact"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Email</a><a class="btn o" href="https://github.com/EngShuayb" target="_blank" rel="noopener"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="vertical-align:-3px;margin-right:8px"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.52-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.15.08 1.76 1.19 1.76 1.19 1.03 1.76 2.69 1.25 3.35.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.69 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.78 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.42-2.69 5.39-5.25 5.68.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5z"/></svg>GitHub</a><button class="btn o" type="button" id="cpm" data-so="Koobiyee email-ka">Copy email</button>
+
+<style>
+.fr{margin-top:32px;background:var(--card);border:1px solid var(--bd);border-radius:14px;padding:18px}
+.fr h3{margin:0 0 4px;font-size:20px}
+.fr .fr-s{margin:0 0 14px}
+.fr-rb{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:0 0 6px}
+@media (min-width:560px){.fr-rb{grid-template-columns:repeat(10,1fr)}}
+.fr-rb button{padding:10px 0;border:1px solid var(--bd);background:var(--bg);color:var(--tx);border-radius:10px;font:inherit;font-weight:600;cursor:pointer;transition:border-color .2s,transform .15s,background .2s}
+.fr-rb button:hover:not(:disabled){border-color:var(--g);transform:translateY(-2px)}
+.fr-rb button[aria-pressed="true"]{background:var(--g);color:var(--on,#04110a);border-color:var(--g)}
+.fr-rb button:disabled{opacity:.6;cursor:default}
+.fr input[type=text],.fr textarea{width:100%;margin:10px 0 0;padding:10px 12px;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);font:inherit;font-size:16px}
+.fr textarea{min-height:110px;resize:vertical}
+.fr input:disabled,.fr textarea:disabled{opacity:.6}
+.fr-row{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:6px}
+.fr-row .btn{margin:6px 0 0;border:0;font:inherit;font-weight:600;cursor:pointer}
+.fr-row .btn:disabled{opacity:.55;cursor:default}
+.fr-cc{margin-left:auto;font-size:13px;color:var(--mu)}
+.fr-hp{position:absolute;left:-9999px;width:1px;height:1px;opacity:0}
+.fr p.fr-i{margin:8px 0 0;font-size:14px;color:var(--mu);min-height:1.3em}
+</style>
+<div class="fr" id="frw">
+<h3 id="fr-t">Rate my website</h3>
+<p class="mu fr-s" id="fr-sub">How do you rate this website out of 10?</p>
+<div class="fr-rb" role="group" aria-label="Rate out of 10">
+<button type="button" data-v="1" aria-pressed="false" aria-label="1 out of 10">1</button><button type="button" data-v="2" aria-pressed="false" aria-label="2 out of 10">2</button><button type="button" data-v="3" aria-pressed="false" aria-label="3 out of 10">3</button><button type="button" data-v="4" aria-pressed="false" aria-label="4 out of 10">4</button><button type="button" data-v="5" aria-pressed="false" aria-label="5 out of 10">5</button><button type="button" data-v="6" aria-pressed="false" aria-label="6 out of 10">6</button><button type="button" data-v="7" aria-pressed="false" aria-label="7 out of 10">7</button><button type="button" data-v="8" aria-pressed="false" aria-label="8 out of 10">8</button><button type="button" data-v="9" aria-pressed="false" aria-label="9 out of 10">9</button><button type="button" data-v="10" aria-pressed="false" aria-label="10 out of 10">10</button>
+</div>
+<p class="fr-i" id="fr-rv" aria-live="polite"></p>
+<p class="fr-i" id="fr-av"></p>
+<input id="fr-n" type="text" maxlength="40" autocomplete="name" placeholder="Your name (optional)" aria-label="Your name (optional)">
+<textarea id="fr-m" maxlength="300" placeholder="Tell me what you would like to see added or improved..." aria-label="Message"></textarea>
+<input class="fr-hp" id="fr-hp" type="text" tabindex="-1" autocomplete="off" aria-hidden="true">
+<div class="fr-row"><button class="btn" id="fr-send" type="button">Send message</button><span class="fr-cc" id="fr-cc">0/300</span></div>
+<p class="fr-i" id="fr-st" aria-live="polite"></p>
+</div>
+<script>
+(function(){var d=document,w=d.getElementById('frw');if(!w)return;
+var RU='https://script.google.com/macros/s/AKfycbyq4WFCaHU4pXZ56dPTwWXE8M5lxoE3fuHyVeON87N1EoEwTRVb8x_g9aTrH6qbXn97/exec';
+var T={
+en:{title:'Rate my website',sub:'How do you rate this website out of 10?',name:'Your name (optional)',ph:'Tell me what you would like to see added or improved...',send:'Send message',your:'Your rating: ',thx:['Thank you for your honest feedback. I will keep working harder!','Thanks! I am aiming even higher next time.','Thank you! That is very kind.','Thank you so much! Alhamdulillah.'],avg:'Average: ',votes:' votes',after:'Average shows after 10 votes',first:'Be the first to rate!',ok:'Thank you! Your message was sent privately.',err:'Could not send. Please try again later.',short:'Please write a little more.',sent:'You already sent a message. Thank you!'},
+so:{title:'Qiimee website-kayga',sub:'Sideed u qiimeysaa website-kan 10 dhibcood?',name:'Magacaaga (ikhtiyaar)',ph:'Ii sheeg waxa aad jeclaan lahayd in lagu daro ama la hagaajiyo...',send:'Dir fariinta',your:'Qiimayntaada: ',thx:['Mahadsanid jawaabtaada daacadda ah. Wali ayaan dadaali doonaa!','Mahadsanid! Mar xigta waxaan hiigsanayaa heer sare.','Mahadsanid! Aad ayaad u fiicantahay.','Aad baad ugu mahadsan tahay! Alhamdulillah.'],avg:'Celcis: ',votes:' codad',after:'Celceliska wuxuu soo muuqdaa 10 cod kadib',first:'Noqo qofka ugu horreeya ee qiimeeya!',ok:'Mahadsanid! Fariintaada si private ah ayaa loo diray.',err:'Lama diri karin. Fadlan dib u isku day.',short:'Fadlan wax yar ka badan qor.',sent:'Horay ayaad fariin u dirtay. Mahadsanid!'}};
+function lg(){return d.documentElement.lang==='so'?'so':'en'}
+var bs=[].slice.call(w.querySelectorAll('.fr-rb button')),nm=d.getElementById('fr-n'),ms=d.getElementById('fr-m'),cc=d.getElementById('fr-cc'),sd=d.getElementById('fr-send'),st=d.getElementById('fr-st'),hp=d.getElementById('fr-hp'),av=d.getElementById('fr-av'),rv=d.getElementById('fr-rv'),tt=d.getElementById('fr-t'),sb=d.getElementById('fr-sub');
+var RV=0,rated=false,sent=false,busy=false,stats=null,key='';
+try{RV=+localStorage.getItem('rate')||0;rated=!!localStorage.getItem('rated');sent=!!localStorage.getItem('fbsent')}catch(e){}
+if(sent)key='sent';
+function bd(v){return v<=4?0:v<=6?1:v<=8?2:3}
+function ui(){var t=T[lg()];
+tt.textContent=t.title;sb.textContent=t.sub;nm.placeholder=t.name;nm.setAttribute('aria-label',t.name);ms.placeholder=t.ph;ms.setAttribute('aria-label',t.ph);sd.textContent=t.send;
+bs.forEach(function(b){b.setAttribute('aria-pressed',String(+b.dataset.v===RV));b.disabled=rated});
+nm.disabled=rated&&sent;ms.disabled=sent;sd.disabled=sent||busy;
+rv.textContent=RV?t.your+RV+'/10. '+t.thx[bd(RV)]:'';
+av.textContent=stats?(stats.count>=10?t.avg+Number(stats.avg).toFixed(1)+'/10 · '+stats.count+t.votes:(stats.count?t.after:t.first)):'';
+st.textContent=key?t[key]:''}
+function nameV(){return encodeURIComponent((nm.value||'').trim().slice(0,40))}
+function get(q,mark){if(mark){busy=true;ui()}
+fetch(RU+(q||'')).then(function(r){return r.json()}).then(function(j){if(typeof j.count!=='number')throw 0;stats=j;if(mark){rated=true;try{localStorage.setItem('rated','1')}catch(e){}}})
+.catch(function(){if(mark){RV=0;try{localStorage.removeItem('rate')}catch(e){}key='err'}})
+.then(function(){busy=false;ui()})}
+bs.forEach(function(b){b.addEventListener('click',function(){if(rated||busy)return;RV=+b.dataset.v;key='';try{localStorage.setItem('rate',RV)}catch(e){}ui();get('?vote='+RV+'&name='+nameV(),true)})});
+ms.addEventListener('input',function(){cc.textContent=ms.value.length+'/300'});
+sd.addEventListener('click',function(){if(sent||busy)return;var m=ms.value.trim();
+if(m.length<3){key='short';ui();return}
+if(hp.value){key='ok';ui();return}
+busy=true;key='';ui();
+fetch(RU+'?feedback='+encodeURIComponent(m.slice(0,300))+'&vote='+(RV||0)+'&name='+nameV()).then(function(r){return r.json()}).then(function(j){if(!j||!j.ok)throw 0;sent=true;try{localStorage.setItem('fbsent','1')}catch(e){}ms.value='';cc.textContent='0/300';key='ok'})
+.catch(function(){key='err'}).then(function(){busy=false;ui()})});
+new MutationObserver(ui).observe(d.documentElement,{attributes:true,attributeFilter:['lang']});
+ui();setTimeout(function(){get()},800)})();
+</script>
+<script>(function(){var d=document,MAIL='mywebsite.shu@gmail.com',so=function(){return d.documentElement.lang==='so'};
+var cp=d.getElementById('cpm');cp.onclick=function(){var t=so()?'Waa la koobiyeeyay ✓':'Copied ✓',o=cp.textContent;function done(){cp.textContent=t;setTimeout(function(){cp.textContent=o},1800)}
+if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(MAIL).then(done,fb)}else fb();function fb(){var i=d.createElement('input');i.value=MAIL;d.body.appendChild(i);i.select();try{d.execCommand('copy')}catch(e){}i.remove();done()}};
+})();</script>
+</section>
+
+<button class="top" id="top" aria-label="Back to top">↑</button>
+<footer>© 2026 Eng Shuayb<div class="fl"><a href="#about">About</a><a href="#roadmap">Roadmap</a><a href="#contact">Contact</a><a href="https://github.com/EngShuayb" target="_blank" rel="noopener">GitHub</a></div><span class="pd">Last updated: 7 October 2026</span></footer>
+<div id="pg" aria-hidden="true"></div>
+<script>(function(){var p=document.getElementById('pg'),q=false;
+function u(){q=false;var h=document.documentElement,m=h.scrollHeight-h.clientHeight;p.style.width=(m>0?h.scrollTop/m*100:0)+'%'}
+addEventListener('scroll',function(){if(!q){q=true;requestAnimationFrame(u)}},{passive:true});u()})();</script>
+
+<script>
+(function(){var r=document.documentElement,b=document.getElementById('t'),mt=document.querySelector('meta[name=theme-color]'),rmo=matchMedia('(prefers-reduced-motion:reduce)').matches;
+function ap(m,save){r.setAttribute('data-theme',m);if(save){try{localStorage.setItem('theme',m)}catch(x){}}if(mt)mt.content=m==='dark'?'#07142a':'#ffffff';b.setAttribute('aria-checked',m==='dark')}
+ap(r.getAttribute('data-theme')||'dark',false);
+b.addEventListener('click',function(e){var m=r.getAttribute('data-theme')==='dark'?'light':'dark';
+if(document.startViewTransition&&!rmo&&!r.classList.contains('lite')&&(navigator.hardwareConcurrency||4)>=6){var x=e.clientX||innerWidth-40,y=e.clientY||20,rad=Math.hypot(Math.max(x,innerWidth-x),Math.max(y,innerHeight-y));
+var vt=document.startViewTransition(function(){ap(m,true)});
+vt.ready.then(function(){r.animate({clipPath:['circle(0px at '+x+'px '+y+'px)','circle('+rad+'px at '+x+'px '+y+'px)']},{duration:650,easing:'cubic-bezier(.4,0,.2,1)',pseudoElement:'::view-transition-new(root)'})}).catch(function(){})}
+else{r.classList.add('tt');ap(m,true);setTimeout(function(){r.classList.remove('tt')},600)}})})();
+document.documentElement.classList.add('js');
+var fb=document.querySelectorAll('#fl button'),ps=document.querySelectorAll('#posts details');
+fb.forEach(function(b){b.onclick=function(){fb.forEach(function(x){x.classList.remove('on')});b.classList.add('on');var c=b.dataset.c,n=0;ps.forEach(function(d){var s=c==='all'||(d.dataset.c||'').split(' ').indexOf(c)>-1;d.hidden=!s;if(s)n++});document.getElementById('none').hidden=n>0}});
+var rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});rv.forEach(function(e){io.observe(e)})}else{rv.forEach(function(e){e.classList.add('in')})}
+
+
+var tb=document.getElementById('top');
+tb.onclick=function(){scrollTo({top:0,behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth'})};
+addEventListener('scroll',function(){tb.classList.toggle('show',scrollY>500)},{passive:true});
+if('IntersectionObserver' in window){var na=document.querySelectorAll('nav a'),so=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){na.forEach(function(a){a.classList.toggle('act',a.getAttribute('href')==='#'+({demos:'lab',blog:'month',resources:'month',soon:'projects'}[e.target.id]||e.target.id))})}})},{rootMargin:'-45% 0px -50% 0px'});document.querySelectorAll('section[id]').forEach(function(s){so.observe(s)})}
+
+document.querySelectorAll('#posts details').forEach(function(d){var s=d.querySelector('summary'),t=s.textContent.trim(),w=d.textContent.trim().split(/\s+/).length,m=Math.max(1,Math.round(w/200));var r=document.createElement('span');r.className='rt';r.textContent='· '+m+' min read';s.appendChild(r);var u=encodeURIComponent(location.href),x=encodeURIComponent(t+' - Eng Shuayb');var sh=document.createElement('div');sh.className='share';sh.innerHTML='<span class="mu">Share:</span><a href="https://wa.me/?text='+x+'%20'+u+'" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.facebook.com/sharer/sharer.php?u='+u+'" target="_blank" rel="noopener">Facebook</a>';d.appendChild(sh)});
+
+var D={"Email:": "Iimayl:","Study tips and quick notes I use myself. Free to use and share.": "Talooyin waxbarasho iyo qoraallo kooban oo aan naftayda u isticmaalo. Bilaash ayay tahay, la isticmaal oo la wadaag.", "Download formula sheet (PDF)": "Soo deji warqadda foomamka (PDF)","SNU admission result expected": "Natiijada gelitaanka SNU ayaa la filayaa", "Waiting for the result of the admission exam.": "Waxaan sugayaa natiijada imtixaanka gelitaanka.", "Started studying and preparing for the exam, studying every day with friends.": "Waxaan bilaabay wax-barasho iyo diyaarinta imtixaanka, anigoo maalin kasta wax la barta asxaabta.", "Closing one chapter and starting the next.": "Xirid cutub oo bilow cutub cusub.", "The result of the exam I worked hard for all year.": "Natiijada imtixaanka aan sanad dhan u dadaalay.", "Began the registration process at Somali National University.": "Waxaan bilaabay habka diiwaangelinta Jaamacadda Qaranka Soomaaliyeed.", "Sat the entrance exam after preparing with past papers in English, Biology, Chemistry, Physics and Maths.": "Waxaan fadhiistay imtixaanka gelitaanka kadib diyaarin warqado hore oo Ingiriisi, Bayoloji, Kimistari, Fisikis iyo Xisaab ah.", "The goal I'm working toward.": "Yoolka aan u shaqeynayo.", "Recommendations": "Cadeymo / Talooyin", "Coming soon.": "Dhawaan.","Results": "Natiijo", "Government Exam Result": "Natiijada Imtixaanka Dawladda", "Overall result from the national government exam, 2026, plus the two subjects most relevant to Electrical Engineering.": "Natiijada guud ee rasmiga ah, imtixaanka qaranka ee dawladda 2026, iyo labada maaddo ee ugu khuseeya Injineernimada Korontada.", "Overall grade": "Darajada guud", "Passed": "Gudbay", "Name on result": "Magaca natiijada", "School": "Dugsiga", "Exam": "Imtixaanka", "Government exam 2026": "Imtixaanka dawladda 2026", "Results by subject": "Natiijada maaddo kasta", "Subject": "Maaddada", "Grade": "Darajada", "Islamic Studies": "B. Islaamka", "History": "Taariikh", "Physics": "Fisikis", "Somali": "Soomaali", "Business": "Ganacsi", "Geography": "Juquraafi", "Arabic": "Carabi", "Biology": "Bayoloji", "Mathematics": "Xisaab", "English": "Ingiriis", "Chemistry": "Kimistari","About": "Ku saabsan", "Journey": "Safarkayga", "Skills": "Xirfado", "CV": "CV", "Blog": "Blog", "Projects": "Mashaariic", "Resources": "Ilaha", "FAQ": "Su'aalo Joogto ah", "Contact": "Xiriir", "Student · Future Electrical Engineer": "Arday · Injineer Korontada ee Mustaqbalka", "I share what I learn about engineering, science and technology — to benefit myself, my people and my country.": "Waxaan la wadaagaa wixii aan ka bartay injineernimada, sayniska iyo teknoolajiyada, si aan nafteyda, dadkeyga iyo dalkayga ugu anfaco.", "Read the blog": "Akhri blog-ga", "Get in touch": "Nala soo xiriir", "Download CV": "Soo deji CV-ga", "Email": "Iimayl", "About Me": "Ku saabsan Aniga", "Education & Achievements": "Waxbarasho & Guulo", "Skills & Focus Areas": "Xirfado & Meelaha Aan Ku Xiisaynayo", "My CV": "CV-gayga", "Resources for Students": "Ilo Ardayda u Diyaarsan", "Grade A": "Darajo A", "Earned through daily consistency": "Waxaa lagu helay joogteyn maalinle ah", "Electrical Engineering": "Injineernimada Korontada", "A choice that started with curiosity": "Doorasho ka bilaabatay xiisaha", "A practical beginning": "Bilow wax ku ool ah", "Began exam preparation": "Waxaan bilaabay diyaarinta imtixaanka", "Last day of school": "Maalinta ugu dambeysay ee dugsiga", "Government exam result: Grade A": "Natiijada imtixaanka dawladda: Darajo A", "Started SNU registration": "Waxaan bilaabay diiwaangelinta SNU", "SNU admission exam": "Imtixaanka gelitaanka SNU", "BSc Electrical Engineering, SNU": "BSc Injineernimada Korontada, SNU", "Engineering & Electricity": "Injineernimo & Koronto", "Physics & Maths": "Fiisigis & Xisaab", "Programming & Tech": "Barnaamijyo & Tikno", "Discipline": "Anshax & Dadaal", "View a short summary below or download the full PDF.": "Halkan ka eeg koobitaan kooban, ama soo deji PDF-ka oo dhan.", "Education": "Waxbarasho", "Next step": "Tallaabada xigta", "Focus": "Dhinacyada aan ku xooggan nahay", "Grade A on the government exam (2026).": "Darajo A imtixaanka dawladda (2026).", "BSc Electrical Engineering at Somali National University (SNU).": "BSc Injineernimada Korontada, Jaamacadda Qaranka Soomaaliyeed (SNU).", "Electronics, physics, maths, programming and exam preparation.": "Elektarooniga, fiisigiska, xisaabta, barnaamijyada iyo diyaarinta imtixaanka.", "Filter by topic:": "Ku sifee mawduuc:", "All": "Dhammaan", "Technology": "Teknoolajiyo", "Engineering": "Injineernimo", "Science": "Sayniska", "Learning": "Barasho", "My Journey": "Safarkayga", "More posts coming soon.": "Boosas dheeraad ah waa imaanayaan dhawaan.", "Questions, ideas or collaboration? Reach out:": "Su'aalo, fikrado ama iskaashi? Nala soo xiriir:", "Who is this website for?": "Web-kan yaa loogu talagalay?", "What do you plan to study?": "Maxaad qorsheyneysaa inaad barato?", "What language is the site in?": "Luqadda web-ku waa maxay?", "Can I contact you for advice?": "Ma kula xiriiri karaa talo?", "English and Somali. Use the SO / EN button at the top.": "Ingiriisi iyo Soomaali. Isticmaal badhanka SO / EN ee sare.", "Electrical Engineering at Somali National University (SNU).": "Injineernimada Korontada, Jaamacadda Qaranka Soomaaliyeed (SNU).", "Mainly students and the wider community who want clear, honest explanations of science, engineering and technology.": "Ugu horrayn ardayda iyo bulshada rabta sharaxaad cad oo daacad ah oo ku saabsan sayniska, injineernimada iyo teknoolajiyada.", },sel='nav a,h2,h3,.tag,.hero p,section>p,.btn,.fl button,.card b,.card span,.tl b,.tl span,details>p,.rs td,.rs th,.rs dt,.rs dd,.rs b,.rs caption,.rs .mu,#contact .em',els=[].slice.call(document.querySelectorAll(sel)).filter(function(e){var k=e.textContent.trim();if(D[k]&&!e.children.length){e._en=e.textContent;e._so=D[k];return true}});
+var SO=[{"d": "La daabacay: 5 Oktoobar 2026", "t": "Sababta aan xisaabta iyo fisikiska uga bilaabayo", "p": ["Jidkayga wuxuu ka bilaabmaa xisaab iyo fisikis, ma aha wareegyada. Injineernimada korontadu labadaba waxay isticmaashaa had iyo jeer: aljebra si loo xaliyo isla-barbardhigyada sida V = I × R, iyo fisikis si loo fahmo tamar, xoogag iyo mowjado.", "Waxaan door bidaa inaan marka hore dhiso aasaas adag intaanan hore u boodin oo aan dambe lumin. Marka aan dhammeeyo tallaabo, waxaan ku calaamadin doonaa jidka."]}, {"d": "La daabacay: 4 Oktoobar 2026", "t": "Sababta bogga uu u leeyahay Mini Lab, iyo cidda sameysay", "p": ["Mini Lab-ka iyo oscilloscope-ka ee bogga ku jira waa tusaalayaal (demos). Anigu ma aanan dhisin. Waa tusaale ka mid ah mashaariicda aan rabo inaan ku baro Injineernimada Korontada, si aad u aragto fikradaha aan jaamacadda ka baran doono.", "Mini Lab-ka, voltage, resistance, current iyo power waxaa isku xira Sharciga Ohm (V = I × R) iyo P = V × I. Oscilloscope-ku wuxuu muujiyaa farqiga u dhexeeya AC, oo kor iyo hoos u dhaqaaqa sida korontada guriga, iyo DC, oo toosan sida baytari. Marka aan si fiican u barto, waxaan qorsheynayaa inaan dhiso wareegyo anigu leeyahay oo aan halkan la wadaago."]}, {"t": "Maxay tahay koronto? Voltage, current iyo resistance oo sahlan loo sharaxay", "p": ["Korontadu waa socodka dallaca korontada, inta badan elektaroonno mara walax is-gudbisa (conductor). Saddex fikradood ayaa sharxaya inta badan wareegyada.", "<b>Voltage (V)</b> waa riixidda dhaqaajisa dallaca, sida cadaadiska biyaha ee tuubada ku jira. <b>Current (I)</b>, oo lagu cabbiro ampere, waa inta dallac ah ee socota ilbiriqsi kasta, sida cadadka biyaha ka gudbaya. <b>Resistance (R)</b>, oo lagu cabbiro ohm, waa inta walaxdu hor istaagto socodka, sida tuubo cidhiidhi ah.", "Waxay isku xiran yihiin Sharciga Ohm: <b>V = I × R</b>. Haddii baytari 12 V ah ay ku wado iska-caabbiye 4 Ω ah, current-ku waa 12 ÷ 4 = 3 A. Marka aad fahanto isla'egtan keliya, durba waad falanqayn kartaa wareegyo fudud."]}, {"t": "Maxay Soomaaliya ugu baahan tahay injineero koronto oo badan", "p": ["Korontada la isku halleyn karo waxay shaqeysiisaa isbitaallada, dugsiyada, ganacsiyada iyo isgaarsiinta. Mid kasta wuxuu u baahan yahay dad naqshadeyn kara, rakibi kara oo dayactiri kara nidaamyada korontada.", "Injineero xirfad leh waxay awoodaan inay dhisaan koronto jaban, ammaan ah oo la isku halleyn karo oo bulshooyinkeenna u adeegta, taasina waa sababta aan rabo inaan barto una wadaago wixii aan baranayo."]}, {"t": "Wareegyo series iyo parallel: maxay ku kala duwan yihiin?", "p": ["Wareegga <b>series</b>, qaybaha waxaa lagu xiraa hal xariiq. Current isku mid ah ayaa mara dhammaantood, voltages way is-ururiyaan, hadduu hal qayb jabana wax walba way joogsadaan.", "Wareegga <b>parallel</b>, qayb kasta waxay leedahay laan u gaar ah. Laan kasta waxay helaa voltage isku mid ah, currents way isu darmaan, hadduu hal laan guuldareysto kuwa kale way sii shaqeeyaan. Sidaa darteed laydhadhka iyo soketyada guriga waxaa lagu xiraa parallel."]}, {"t": "Sababta aan u rabo inaan noqdo injineer koronto", "p": ["Waxay bilaabatay markaan fahmay in injineernimada korontadu tahay xirfad aad u waxtar badan. Waan xiiseeyay, baaritaan ayaan ku sameeyay goobta.", "Baaritaankaygu wuxuu muujiyay inay tahay goob wanaagsan oo mustaqbal wanaagsan leh, waddankeenuna wuu u baahan yahay. Yoolkaygu waa inaan nafteyda, dadkeyga iyo dalkayga anfaco, goobtanuna waxay iga dhigaysaa inaan taas sameeyo."]}, {"t": "Sidee loo xalliyaa dhibaatooyinka fiisigiska tallaabo-tallaabo", "p": ["1. Qor waxa la siiyay iyo waxa aad heli doonto. 2. Sawir dhakhso ah samee. 3. Dooro qaanuunka isku xira. 4. Hubi in unugyadu is waafaqaan, tusaale mitir iyo ilbiriqsi. 5. Ku beddel lambarrada oo xisaabi. 6. Isweydii jawaabtu ma macquul baa.", "Haddii tallaabooyinkan isku mid ah la raaco mar kasta, dhibaatooyinka adag way sahlanaadaan, waxayna kaa caawinayaan inaad ogaato meesha aad khalad ku samaysay."]}],PD=[].slice.call(document.querySelectorAll('#posts details'));
+PD.forEach(function(d){var s=d.querySelector('summary'),r=d.querySelector('.rt');d._et=s.firstChild.textContent;d._ep=[].map.call(d.querySelectorAll('p:not(.pd)'),function(p){return p.innerHTML});d._pd=d.querySelector('.pd').textContent;d._n=r?(r.textContent.match(/\d+/)||[1])[0]:1});
+function postsL(l){var so=l==='so';PD.forEach(function(d,i){var s=d.querySelector('summary'),x=SO[i],r=s.querySelector('.rt'),sh=d.querySelector('.share span');if(!x)return;s.firstChild.textContent=so?x.t:d._et;d.querySelectorAll('p:not(.pd)').forEach(function(p,j){p.innerHTML=so?x.p[j]:d._ep[j]});d.querySelector('.pd').textContent=so?(x.d||'La daabacay: 3 Oktoobar 2026'):d._pd;if(r)r.textContent=so?'· '+d._n+' daqiiqo akhris':'· '+d._n+' min read';if(sh)sh.textContent=so?'La wadaag:':'Share:'})}
+var lb=document.getElementById('lg');
+function setL(l){document.documentElement.lang=l;els.forEach(function(e){e.textContent=l==='so'?e._so:e._en});postsL(l);lb.textContent=l==='so'?'EN':'SO';try{localStorage.setItem('lang',l)}catch(x){}}
+lb.onclick=function(){setL(document.documentElement.lang==='so'?'en':'so')};
+try{if(localStorage.getItem('lang')==='so')setL('so')}catch(x){}
+</script>
+<script>
+(function(){var d=document,rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+var sp=d.createElement('div');sp.id='sp';d.body.appendChild(sp);
+function pr(){var h=d.documentElement.scrollHeight-innerHeight;sp.style.transform='scaleX('+(h>0?Math.min(1,scrollY/h):0)+')'}
+addEventListener('scroll',pr,{passive:true});pr();
+d.querySelectorAll('.rs tbody tr').forEach(function(r,i){r.style.setProperty('--d',i)});
+var pe=null,pq=false;d.addEventListener('pointermove',function(e){pe=e;if(pq)return;pq=true;requestAnimationFrame(function(){pq=false;var c=pe.target.closest&&pe.target.closest('.card');if(!c)return;var b=c.getBoundingClientRect();c.style.setProperty('--mx',pe.clientX-b.left+'px');c.style.setProperty('--my',pe.clientY-b.top+'px')})},{passive:true});
+})();
+</script>
+<script>
+(function(){var d=document,rm=matchMedia('(prefers-reduced-motion:reduce)').matches,W={A:100,'A-':90,B:78,'B-':70};
+d.querySelectorAll('.rs tbody tr').forEach(function(r){var g=r.querySelector('.gr'),t=r.querySelector('td');if(!g||!t)return;var i=d.createElement('i');i.className='gb';i.style.setProperty('--w',(W[g.textContent.trim()]||60)+'%');t.appendChild(i)});
+var RL={en:['Future Electrical Engineer','Electronics enthusiast','Learning in public','Knowledge sharer'],so:['Injineer Koronto mustaqbal','Xiise Elektaroonig','Wax barasho dadweyne','La-wadaagaha aqoonta']},rt=d.getElementById('rt'),k=0,c=0,del=false;
+function ty(){var w=RL[d.documentElement.lang==='so'?'so':'en'][k%4];if(rm){rt.textContent=w;return}
+if(!del){c++;rt.textContent=w.slice(0,c);if(c>=w.length){del=true;return setTimeout(ty,1500)}setTimeout(ty,70)}
+else{c--;rt.textContent=w.slice(0,Math.max(c,0));if(c<=0){del=false;k++;return setTimeout(ty,250)}setTimeout(ty,35)}}
+setTimeout(ty,900);
+d.addEventListener('click',function(e){var b=e.target.closest&&e.target.closest('.btn');if(!b||rm)return;var r=b.getBoundingClientRect(),z=Math.max(r.width,r.height)*2,s=d.createElement('span');s.className='rp';s.style.cssText='width:'+z+'px;height:'+z+'px;left:'+(e.clientX-r.left-z/2)+'px;top:'+(e.clientY-r.top-z/2)+'px';b.appendChild(s);setTimeout(function(){s.remove()},650)});
+
+})();
+</script>
+<script>
+(function(){var d=document,lab=d.getElementById('lab');if(!lab)return;
+var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,$=function(i){return d.getElementById(i)},NS='http://www.w3.org/2000/svg';
+function L(){var so=d.documentElement.lang==='so';d.querySelectorAll('[data-so]').forEach(function(e){if(e.hasAttribute('data-h')){if(e._e===undefined)e._e=e.innerHTML;e.innerHTML=so?e.dataset.so:e._e;return}var t=e.firstChild&&e.firstChild.nodeType===3?e.firstChild:null;if(e._e===undefined)e._e=t?t.textContent:e.textContent;if(t)t.textContent=so?e.dataset.so:e._e;else e.textContent=so?e.dataset.so:e._e})}
+L();new MutationObserver(L).observe(d.documentElement,{attributes:true,attributeFilter:['lang']});
+var lv=$('lv'),lr=$('lr'),lf=$('lf'),md=$('md'),AC=true,off=0,last=0,vis=false,E=[],g=$('el'),i;
+for(i=0;i<14;i++){var c=d.createElementNS(NS,'circle');c.setAttribute('r','3.2');c.setAttribute('class','el');g.appendChild(c);E.push(c)}
+function pt(s){s=(s%700+700)%700;if(s<240)return[40+s,40];s-=240;if(s<110)return[280,40+s];s-=110;if(s<240)return[280-s,150];s-=240;return[40,150-s]}
+var I=1,P=1;
+function upd(){var V=+lv.value,R=+lr.value;I=V/R;P=V*I;$('vo').textContent=V+' V';$('ro').textContent=R+' Ω';$('io').textContent=I.toFixed(2)+' A';$('po').textContent=P.toFixed(1)+' W';$('lvv').textContent=V+' V';$('lrv').textContent=R+' Ω';$('lfv').textContent=lf.value+' Hz';
+var b=Math.min(1,Math.log(1+P)/Math.log(101)),h=Math.min(1,P/200);$('bg2').setAttribute('r',16+26*b);$('bg2').style.opacity=.1+.7*b;$('bl').style.fillOpacity=.15+.85*b;$('rz').style.stroke='hsl('+(150-150*h)+' 85% 55%)';draw(0);dots(0)}
+function dots(dt){off+=(30+60*Math.log(1+I))*dt;E.forEach(function(c,k){var p=pt(off+k*50);c.setAttribute('cx',p[0]);c.setAttribute('cy',p[1])})}
+var cv=$('sc'),x=cv.getContext('2d'),t=0;
+function draw(dt){t+=dt;var dpr=Math.min(1.5,devicePixelRatio||1),w=cv.clientWidth||320,h=Math.round(w*170/320);if(cv.width!==Math.round(w*dpr)){cv.width=Math.round(w*dpr);cv.height=Math.round(h*dpr)}
+var W=cv.width,H=cv.height;if(!draw.k||(draw.n=(draw.n||0)+1)%60===0){var cs=getComputedStyle(d.documentElement);draw.g=cs.getPropertyValue('--g').trim()||'#38bdf8';draw.b=cs.getPropertyValue('--bd').trim()||'#1d3a66';draw.k=1}var g1=draw.g,bd=draw.b;
+x.clearRect(0,0,W,H);x.lineWidth=1;x.strokeStyle=bd;x.beginPath();for(var k=1;k<8;k++){x.moveTo(W*k/8,0);x.lineTo(W*k/8,H)}for(k=1;k<6;k++){x.moveTo(0,H*k/6);x.lineTo(W,H*k/6)}x.stroke();
+var amp=(lv.value/24)*(H/2-10*dpr),f=+lf.value;x.strokeStyle=g1;x.lineWidth=2.2*dpr;x.beginPath();
+for(var px=0;px<=W;px+=2){var y=AC?H/2-amp*Math.sin(6.283*f*px/W-t*f*1.6):H/2-amp;px?x.lineTo(px,y):x.moveTo(px,y)}x.stroke();x.shadowBlur=0}
+function loop(n){if(!vis)return;requestAnimationFrame(loop);if(n-last<30)return;var dt=Math.min(.06,(n-last)/1000);last=n;dots(dt);draw(dt)}
+new IntersectionObserver(function(es){vis=es[0].isIntersecting&&!d.hidden&&!rm;if(vis){last=performance.now();requestAnimationFrame(loop)}}).observe(lab);
+d.addEventListener('visibilitychange',function(){if(!d.hidden&&!rm&&lab.getBoundingClientRect().top<innerHeight&&lab.getBoundingClientRect().bottom>0&&!vis){vis=true;last=performance.now();requestAnimationFrame(loop)}else if(d.hidden)vis=false});
+[lv,lr,lf].forEach(function(e){e.addEventListener('input',upd)});
+md.onclick=function(){AC=!AC;md.textContent=AC?'AC':'DC';draw(0)};
+upd()})();
+</script>
+<script>
+(function(){var d=document,p=d.getElementById('mp');if(!p)return;var dot=d.getElementById('md'),lb=d.getElementById('ml'),box=d.getElementById('mg'),rm=matchMedia('(prefers-reduced-motion:reduce)').matches,vis=false,t=0,last=0,lt=0;
+if(rm){var at=d.querySelector('.atom');if(at&&at.pauseAnimations)at.pauseAnimations()}
+function f(a,x){var s='',k;for(k=-1.8;k<=1.81;k+=.12)s+=(s?'L':'M')+(44+k*22).toFixed(1)+' '+(52-a*k*k*11).toFixed(1);p.setAttribute('d',s);dot.setAttribute('cx',(44+x*22).toFixed(1));dot.setAttribute('cy',(52-a*x*x*11).toFixed(1))}
+function fr(n){if(!vis)return;requestAnimationFrame(fr);if(n-last<30)return;var dt=Math.min(.06,(n-last)/1000);last=n;t+=dt;var a=1+.8*Math.sin(t*.9);f(a,1.5*Math.sin(t*1.4));if(n-lt>120){lb.textContent='y = '+a.toFixed(1)+'x²';lt=n}}
+if(rm){f(1,1);return}
+new IntersectionObserver(function(es){vis=es[0].isIntersecting&&!d.hidden;if(vis){last=performance.now();requestAnimationFrame(fr)}}).observe(box);
+d.addEventListener('visibilitychange',function(){if(d.hidden)vis=false;else{var r=box.getBoundingClientRect();if(r.top<innerHeight&&r.bottom>0&&!vis){vis=true;last=performance.now();requestAnimationFrame(fr)}}})})();
+</script>
+<script>
+(function(){var rm=matchMedia('(prefers-reduced-motion:reduce)').matches,L=[].slice.call(document.querySelectorAll('#faq details')),EZ='cubic-bezier(.2,.8,.2,1)';
+L.forEach(function(d){var s=d.querySelector('summary'),a=null;d._w=d.open;
+function h(){return d.getBoundingClientRect().height}
+d._set=function(open){if(d._w===open)return;d._w=open;
+if(rm){d.open=open;return}
+var from=h();if(a){a.cancel();a=null}
+d.style.overflow='hidden';var to;
+if(open){d.open=true;to=h()}else{var c=getComputedStyle(d);to=s.offsetHeight+parseFloat(c.paddingTop)+parseFloat(c.paddingBottom)+parseFloat(c.borderTopWidth)+parseFloat(c.borderBottomWidth)}
+a=d.animate({height:[from+'px',to+'px']},{duration:open?460:380,easing:EZ});
+var me=a;me.onfinish=function(){if(a!==me)return;a=null;d.open=open;d.style.overflow=''};
+me.oncancel=function(){}};
+s.addEventListener('click',function(e){e.preventDefault();var o=!d._w;if(o)L.forEach(function(x){if(x!==d)x._set(false)});d._set(o)})});
+})();
+</script>
+<script>
+(function(){var l=[].slice.call(document.querySelectorAll('.rm li'));if(!l.length)return;
+if(!('IntersectionObserver' in window)||matchMedia('(prefers-reduced-motion:reduce)').matches){l.forEach(function(e){e.classList.add('on')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('on');io.unobserve(e.target)}})},{threshold:.35,rootMargin:'0px 0px -8% 0px'});l.forEach(function(e){io.observe(e)})})();
+</script>
+<script>
+(function(){var d=document,s=[].slice.call(d.querySelectorAll('section')),at=d.querySelector('.atom');
+if(!('IntersectionObserver' in window)){s.forEach(function(e){e.classList.add('vis')});return}
+var io=new IntersectionObserver(function(es){es.forEach(function(e){e.target.classList.toggle('vis',e.isIntersecting);if(e.target.id==='demos'&&at&&at.pauseAnimations){e.isIntersecting?at.unpauseAnimations():at.pauseAnimations()}})},{rootMargin:'160px 0px'});s.forEach(function(e){io.observe(e)})})();
+</script>
+<script>
+(function(){var d=document,l=[].slice.call(d.querySelectorAll('.rm li[data-st]')),em=d.getElementById('em');
+if(em)em.href='mai'+'lto:'+['mywebsite.shu','gmail.com'].join('@');
+if(!l.length)return;var tx=d.getElementById('rmt'),f=d.getElementById('rmf'),n=l.length,
+T={en:{done:'Done',now:'Now',next:'Next'},so:{done:'La dhammeeyay',now:'Hadda',next:'Xiga'}};
+function lg(){return d.documentElement.lang==='so'?'so':'en'}
+function ui(){var done=l.filter(function(e){return e.dataset.st==='done'}).length,now=l.filter(function(e){return e.dataset.st==='now'})[0],cur=now?l.indexOf(now)+1:0,so=lg()==='so';
+l.forEach(function(e){var c=e.querySelector('.stt');if(c)c.textContent=T[lg()][e.dataset.st]});
+tx.textContent=so?(cur?'Tallaabada '+cur+' ee '+n+' way socotaa · '+done+' la dhammeeyay':done+' ee '+n+' la dhammeeyay'):(cur?'Step '+cur+' of '+n+' in progress · '+done+' completed':done+' of '+n+' completed');
+f.dataset.w=((done+(now?.5:0))/n*100).toFixed(1)}
+ui();new MutationObserver(ui).observe(d.documentElement,{attributes:true,attributeFilter:['lang']});
+function go(){f.style.width=f.dataset.w+'%'}
+if('IntersectionObserver' in window){var io=new IntersectionObserver(function(es){if(es[0].isIntersecting){go();io.disconnect()}},{threshold:.4});io.observe(f.parentNode)}else go()})();
+</script>
+<style>
+#aib{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom,0px));z-index:20;height:48px;padding:0 16px;border-radius:99px;border:1px solid var(--g);background:var(--card);color:var(--g);font:700 14px inherit;cursor:pointer;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+#aip{position:fixed;right:16px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:21;width:min(370px,calc(100vw - 32px));max-height:min(560px,calc(100% - 110px));display:flex;flex-direction:column;background:var(--card);border:1px solid var(--g);border-radius:16px;box-shadow:0 16px 44px rgba(0,0,0,.35);overflow:hidden}
+#aip[hidden]{display:none}
+#aip .h{padding:12px 14px;border-bottom:1px solid var(--bd);display:flex;justify-content:space-between;align-items:center;font-weight:700}
+#aip .h small{display:block;font-weight:400;color:var(--mu);font-size:12px}
+#aip .h button{background:none;border:0;color:var(--tx);font-size:20px;cursor:pointer}
+#aim{flex:1;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:8px}
+#aim div{max-width:88%;padding:9px 12px;border-radius:12px;font-size:14px;line-height:1.5;white-space:pre-wrap}
+#aim .b{background:var(--bg);border:1px solid var(--bd);align-self:flex-start}
+#aim .u{background:var(--g);color:#06140b;align-self:flex-end}
+#aic{display:flex;flex-wrap:wrap;gap:6px;padding:0 12px 8px}
+#aic button{background:none;border:1px solid var(--bd);color:var(--mu);border-radius:99px;padding:4px 10px;font-size:12px;cursor:pointer}
+#aif{display:flex;gap:8px;padding:10px;border-top:1px solid var(--bd)}
+#aif input{flex:1;min-width:0;border:1px solid var(--bd);border-radius:10px;background:var(--bg);color:var(--tx);padding:10px;font:inherit;font-size:16px}
+#aif button{border:0;border-radius:10px;background:var(--g);color:#06140b;font-weight:700;padding:0 14px;cursor:pointer}
+.top{bottom:calc(76px + env(safe-area-inset-bottom,0px)) !important}
+</style>
+<button id="aib" type="button" aria-label="AI Assistant">🤖 AI Assistant</button>
+<div id="aip" hidden role="dialog" aria-label="Eng Shuayb AI Assistant"><div class="h"><div>Eng Shuayb AI Assistant<small id="ais"></small></div><button type="button" id="aix" aria-label="Close">×</button></div><div id="aim" aria-live="polite"></div><div id="aic"></div><form id="aif" onsubmit="return false"><input id="aiq" maxlength="200" autocomplete="off"><button type="submit" id="ais2">➤</button></form></div>
+<script>
+(function(){var d=document,B=d.getElementById('aib'),P=d.getElementById('aip'),M=d.getElementById('aim'),C=d.getElementById('aic'),Q=d.getElementById('aiq'),F=d.getElementById('aif'),MAIL='mywebsite.shu@gmail.com';
+function lg(){return d.documentElement.lang==='so'?'so':'en'}
+var KB=[
+{k:['who','shuayb','abdirahman','about','owner','yaa','yahay','cidda','ku saabsan','aqoonsi'],q:{en:'Who is Eng Shuayb?',so:'Yaa yahay Eng Shuayb?'},a:{en:'Shuayb Abdirahman is learning Electrical Engineering (EE) and follows Tech news. This website shares what he learns every month: a roadmap, demos and practical tips.',so:'Shuayb Abdirahman wuxuu baranayaa Injineernimada Korontada (EE) wuxuuna la socdaa war-teknoolajiyeed. Websaydkani wuxuu bil kasta la wadaagaa waxa uu bartay: jidgooyo, demo-yo iyo talooyin.'}},
+{k:['start','begin','learn','how do i','roadmap','path','steps','bilow','baro','barasho','jid','jidka','sidee'],q:{en:'How do I start learning EE?',so:'Sideen u bilaabaa barashada EE?'},a:{en:'Start with Ohm\'s Law (V = I × R), then series and parallel circuits, plus basic maths and physics. Practice a little every day. See the Roadmap section (#roadmap).',so:'Ka bilow Sharciga Ohm (V = I × R), kadibna wareegyada series iyo parallel, iyo xisaab & fisikis aasaasi ah. Maalin kasta wax yar ku celceli. Eeg qaybta Roadmap (#roadmap).'}},
+{k:['ohm','voltage','current','resistance','volt','ampere','koronto','electricity','resistor','danab'],q:{en:'What is Ohm\'s Law?',so:'Waa maxay Sharciga Ohm?'},a:{en:'Ohm\'s Law: V = I × R. Voltage is the push, current is the flow, resistance is how much the material resists. If you know two, you can find the third. Power is P = V × I.',so:'Sharciga Ohm: V = I × R. Voltage waa riixitaanka, current waa socodka, resistance-na waa caabbinta. Haddii aad ogaato laba, saddexaadka waad heli kartaa. Power: P = V × I.'}},
+{k:['lab','mini lab','oscilloscope','demo','demos','slider','shaybaar','ac','dc','wave'],q:{en:'How do I use the Mini Lab?',so:'Sideen u isticmaalaa Mini Lab-ka?'},a:{en:'Move the voltage and resistance sliders. Current = V ÷ R and power = V × I. In the oscilloscope, switch AC/DC and change the frequency to see the waveform. These are demos, not built by Shuayb.',so:'Dhaqaaji sliders-ka voltage iyo resistance. Current = V ÷ R, power = V × I. Oscilloscope-ka, u beddel AC/DC oo bedel frequency-ga. Kuwani waa demo-yo, Shuayb ma dhisin.'}},
+{k:['project','projects','build','built','mashruuc','mashaariic','dhis','dhisay','soon','dhawaan'],q:{en:'Where are your projects?',so:'Halkee yaalaan mashaariicdu?'},a:{en:'Shuayb\'s own projects will be posted as he learns and builds them. See "Projects" and "Coming Soon".',so:'Mashaariicda Shuayb waa la soo gelin doonaa marka uu wax barto oo dhiso. Eeg "Projects" iyo "Dhawaan".'}},
+{k:['safety','safe','danger','mains','12 v','badbaado','khatar','shock'],q:{en:'Any safety tips?',so:'Talooyin badbaado?'},a:{en:'Start with low-voltage batteries (up to 12 V). Never open or work on mains-powered devices. Keep water away, switch power off before changing a circuit, and ask someone experienced if unsure.',so:'Ka bilow baytariyo danab hoose (ilaa 12 V). Ha furin qalab korontada guriga ku shaqeeya. Biyaha ka fogee, awoodda goo ka hor intaadan wareegga beddelin, weydii qof khibrad leh.'}},
+{k:['contact','email','mail','reach','github','whatsapp','xiriir','iimayl','la xiriir','la hadal'],q:{en:'How can I contact you?',so:'Sideen kuula xiriiraa?'},a:{en:'Email: '+MAIL+'. You can also use GitHub in the Contact section.',so:'Iimayl: '+MAIL+'. Waxaad kaloo isticmaali kartaa GitHub (qaybta Contact).'}},
+{k:['language','somali','english','af','luuqad','luqad','af soomaali','translate','tarjum'],q:{en:'Can I change language?',so:'Luqadda ma beddeli karaa?'},a:{en:'Yes. Tap the EN/SO button in the top menu to switch between English and Somali.',so:'Haa. Taabo badhanka EN/SO ee menu-ga sare si aad ugu beddesho Ingiriis ama Soomaali.'}},
+{k:['dark','light','theme','night','day','mode','madow','iftiin','habeen'],q:{en:'Dark / light mode?',so:'Madow / iftiin?'},a:{en:'Use the sun/moon switch in the top menu to change between night and day mode.',so:'Isticmaal furaha qorraxda/dayaxa ee menu-ga sare si aad u beddesho habeen iyo maalin.'}},
+{k:['free','price','cost','lacag','bilaash','paid'],q:{en:'Is it free?',so:'Bilaash ma yahay?'},a:{en:'Yes, the content is free to read and share.',so:'Haa, waxa ku jira waa bilaash in la akhriyo oo la wadaago.'}},
+{k:['hello','hi','hey','salaam','salaan','asc','assalaamu','nabad','subax'],q:null,a:{en:'Hello! 👋 Ask me anything about Eng Shuayb or this website.',so:'Salaan! 👋 Weydii wax kasta oo ku saabsan Eng Shuayb ama websaydkan.'}},
+{k:['thanks','thank','mahad','mahadsanid','fiican','mahadsan'],q:null,a:{en:'You are welcome! 😊',so:'Adaa mudan! 😊'}}];
+var FB={en:'I am not sure I understood your question. Could you rephrase it, or pick one of the questions below? For anything else or more details, contact Eng Shuayb: '+MAIL,so:'Ma hubo inaan si fiican u fahmay su\'aashaada. Fadlan mar kale si kale u qor, ama dooro mid ka mid ah su\'aalaha hoose. Wax kale ama faahfaahin dheeraad ah u la xiriir Eng Shuayb: '+MAIL},
+UI={en:{t:'Ask about the website & Eng Shuayb',p:'Type your question...',h:'Hi! I am Eng Shuayb\'s AI Assistant. I can answer questions about this website and about Shuayb. What would you like to know?'},so:{t:'Weydii websaydka iyo Eng Shuayb',p:'Qor su\'aashaada...',h:'Salaan! Waxaan ahay AI Assistant-ka Eng Shuayb. Waxaan ka jawaabi karaa su\'aalaha ku saabsan websaydkan iyo Shuayb. Maxaad rabtaa inaad ogaato?'}};
+function norm(s){return(' '+s.toLowerCase().replace(/[^a-z0-9\u00c0-\u024f' ]+/g,' ').replace(/\s+/g,' ')+' ')}
+function add(c,t){var e=d.createElement('div');e.className=c;e.textContent=t;M.appendChild(e);M.scrollTop=M.scrollHeight}
+function find(t){var n=norm(t),best=null,bs=0,sec=0;KB.forEach(function(e){var s=0;e.k.forEach(function(w){var x=' '+w+' ';if(n.indexOf(x)>-1)s+=2+(w.indexOf(' ')>-1?1:0);else if(w.length>=4&&n.indexOf(' '+w)>-1)s+=1});if(s>bs){sec=bs;bs=s;best=e}else if(s>sec)sec=s});return bs>=1&&bs>sec?best:null}
+function chips(){C.innerHTML='';KB.filter(function(e){return e.q}).slice(0,6).forEach(function(e){var b=d.createElement('button');b.type='button';b.textContent=e.q[lg()];b.onclick=function(){ask(e.q[lg()])};C.appendChild(b)})}
+function ask(t){t=t.trim();if(!t)return;add('u',t);var e=find(t);setTimeout(function(){add('b',e?e.a[lg()]:FB[lg()])},250);Q.value=''}
+function ui(){var u=UI[lg()];d.getElementById('ais').textContent=u.t;Q.placeholder=u.p;chips()}
+var started=false;
+B.onclick=function(){P.hidden=!P.hidden;if(!P.hidden){ui();if(!started){started=true;add('b',UI[lg()].h)}Q.focus()}};
+d.getElementById('aix').onclick=function(){P.hidden=true};
+F.addEventListener('submit',function(){ask(Q.value)});
+new MutationObserver(ui).observe(d.documentElement,{attributes:true,attributeFilter:['lang']});ui()})();
+</script>
+</body></html>
