@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://engshuayb.github.io/sitemap.xml
